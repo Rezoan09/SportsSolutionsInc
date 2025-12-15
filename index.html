@@ -1,0 +1,823 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sports Solutions Inc. — US to BD Sport Imports</title>
+  <meta name="description" content="Sports Solutions Inc. — Authentic US store purchase + import service to Bangladesh. Submit product link, get estimate, pay 50% advance, receive in 25 days." />
+  <style>
+    :root{
+      --bg:#070B14;
+      --bg2:#0B1224;
+      --card:rgba(255,255,255,.06);
+      --card2:rgba(255,255,255,.09);
+      --line:rgba(255,255,255,.14);
+      --txt:#EAF0FF;
+      --mut:#A9B4D6;
+      --acc:#6DFFB3;
+      --acc2:#66B8FF;
+      --warn:#FFC86D;
+      --bad:#FF6D8B;
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --radius: 18px;
+      --radius2: 12px;
+      --max: 1080px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:var(--sans);
+      color:var(--txt);
+      background:
+        radial-gradient(1200px 700px at 20% -10%, rgba(102,184,255,.22), transparent 55%),
+        radial-gradient(900px 600px at 90% 10%, rgba(109,255,179,.18), transparent 55%),
+        radial-gradient(900px 900px at 50% 120%, rgba(255,200,109,.10), transparent 55%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      overflow-x:hidden;
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:24px}
+    header{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(180deg, rgba(7,11,20,.86), rgba(7,11,20,.42));
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .nav{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:14px 24px;
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      letter-spacing:.2px;
+    }
+    .mark{
+      width:42px; height:42px; border-radius:14px;
+      background:
+        radial-gradient(14px 14px at 30% 30%, rgba(109,255,179,.95), transparent 60%),
+        radial-gradient(18px 18px at 70% 70%, rgba(102,184,255,.95), transparent 60%),
+        linear-gradient(135deg, rgba(255,255,255,.14), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.16);
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      position:relative;
+      overflow:hidden;
+    }
+    .mark:before{
+      content:"";
+      position:absolute; inset:-40%;
+      background: conic-gradient(from 180deg, rgba(109,255,179,.0), rgba(109,255,179,.35), rgba(102,184,255,.0));
+      animation: spin 7s linear infinite;
+    }
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .brand h1{
+      margin:0;
+      font-size:15.5px;
+      font-weight:750;
+    }
+    .brand small{
+      display:block;
+      margin-top:2px;
+      color:var(--mut);
+      font-size:12px;
+      letter-spacing:.3px;
+    }
+    .navlinks{display:flex; gap:14px; align-items:center; flex-wrap:wrap}
+    .navlinks a{
+      color:var(--mut);
+      font-size:13px;
+      padding:8px 10px;
+      border-radius:12px;
+      border:1px solid transparent;
+    }
+    .navlinks a:hover{
+      color:var(--txt);
+      border-color:rgba(255,255,255,.10);
+      background:rgba(255,255,255,.03);
+    }
+    .cta{
+      display:flex; gap:10px; align-items:center;
+    }
+    .pill{
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.06);
+      color:var(--txt);
+      padding:9px 12px;
+      border-radius:14px;
+      font-size:13px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.16);
+    }
+    .pill strong{color:var(--acc)}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 13px;
+      border-radius:14px;
+      font-size:13px;
+      border:1px solid rgba(255,255,255,.18);
+      background: linear-gradient(135deg, rgba(109,255,179,.22), rgba(102,184,255,.14));
+      box-shadow: 0 18px 45px rgba(0,0,0,.22);
+      transition: transform .12s ease;
+      cursor:pointer;
+    }
+    .btn:hover{transform: translateY(-1px)}
+    .hero{
+      padding:34px 0 18px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+    }
+    @media (max-width: 920px){
+      .grid{grid-template-columns:1fr}
+      .cta{display:none}
+    }
+    .card{
+      border-radius:var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .pad{padding:18px}
+    .hero h2{
+      margin:0 0 10px;
+      font-size:36px;
+      line-height:1.06;
+      letter-spacing:-.6px;
+    }
+    .hero p{
+      margin:0;
+      color:var(--mut);
+      font-size:14.5px;
+      line-height:1.6;
+    }
+    .badges{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin-top:14px;
+    }
+    .badge{
+      display:inline-flex; gap:8px; align-items:center;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.05);
+      padding:8px 10px;
+      border-radius:999px;
+      font-size:12.5px;
+      color:var(--mut);
+    }
+    .dot{width:9px;height:9px;border-radius:999px;background:var(--acc)}
+    .dot.blue{background:var(--acc2)}
+    .dot.warn{background:var(--warn)}
+    .stores{
+      margin-top:12px;
+      display:flex; flex-wrap:wrap; gap:10px;
+    }
+    .logo{
+      padding:10px 12px;
+      border-radius:14px;
+      border:1px dashed rgba(255,255,255,.16);
+      background:rgba(255,255,255,.04);
+      font-size:12.5px;
+      color:var(--mut);
+    }
+    .note{
+      margin-top:12px;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,200,109,.24);
+      background:rgba(255,200,109,.08);
+      color:rgba(255,255,255,.88);
+      font-size:13px;
+      line-height:1.5;
+    }
+    .steps{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+      margin-top:14px;
+    }
+    @media (max-width: 680px){
+      .steps{grid-template-columns:1fr}
+      .hero h2{font-size:30px}
+    }
+    .step{
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.04);
+      border-radius:var(--radius2);
+      padding:12px;
+    }
+    .step b{display:block; margin-bottom:6px}
+    .step span{color:var(--mut); font-size:13px; line-height:1.5}
+    .section{margin-top:18px}
+    .section h3{
+      margin:0 0 10px;
+      font-size:16px;
+      letter-spacing:.2px;
+    }
+
+    /* Form */
+    form{display:grid; gap:12px}
+    .row{display:grid; grid-template-columns: 1fr 1fr; gap:12px}
+    @media (max-width: 680px){ .row{grid-template-columns:1fr} }
+    label{font-size:12.5px; color:var(--mut)}
+    input, select, textarea{
+      width:100%;
+      margin-top:6px;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(0,0,0,.22);
+      color:var(--txt);
+      outline:none;
+      font-size:14px;
+    }
+    textarea{min-height:86px; resize:vertical}
+    input::placeholder, textarea::placeholder{color:rgba(169,180,214,.65)}
+    .hint{
+      font-size:12px;
+      color:rgba(169,180,214,.80);
+      margin-top:6px;
+      line-height:1.4;
+    }
+    .divider{
+      height:1px;
+      background:rgba(255,255,255,.10);
+      margin:8px 0;
+    }
+    .calc{
+      display:grid; gap:10px;
+      border-radius:var(--radius2);
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.03);
+      padding:12px;
+    }
+    .calc .kvs{
+      display:grid;
+      grid-template-columns: 1fr auto;
+      gap:8px 12px;
+      font-size:13px;
+      color:var(--mut);
+    }
+    .calc .kvs b{color:var(--txt); font-weight:700}
+    .mono{font-family:var(--mono)}
+    .ok{color:var(--acc)}
+    .warnTxt{color:var(--warn)}
+    .badTxt{color:var(--bad)}
+    .subrow{
+      display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:space-between;
+      margin-top:6px;
+    }
+    .fine{
+      font-size:12px; color:rgba(169,180,214,.82); line-height:1.4;
+    }
+
+    /* Footer */
+    footer{
+      margin:26px 0 40px;
+      color:rgba(169,180,214,.82);
+      font-size:12.5px;
+      line-height:1.6;
+      text-align:center;
+    }
+    .tc{
+      font-size:13px;
+      color:var(--mut);
+      line-height:1.55;
+    }
+    .tc ul{margin:10px 0 0 18px}
+    .tc li{margin:7px 0}
+    .chip{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.04);
+      font-size:12px;
+      color:rgba(234,240,255,.88);
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="nav">
+    <div class="brand">
+      <div class="mark" aria-hidden="true"></div>
+      <div>
+        <h1>Sports Solutions Inc.</h1>
+        <small>Authentic US Store Purchase + Import Service → Bangladesh</small>
+      </div>
+    </div>
+
+    <nav class="navlinks" aria-label="primary">
+      <a href="#how">How it works</a>
+      <a href="#estimate">Get estimate</a>
+      <a href="#terms">Terms</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="cta">
+      <div class="pill"><strong>50%</strong> advance • <strong>25 days</strong> cycle</div>
+      <a class="btn" href="#estimate">Submit Product</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero grid">
+    <div class="card">
+      <div class="pad">
+        <h2>Import authentic <span style="color:var(--acc)">Nike / Adidas / Puma</span> shoes from US stores — delivered to Bangladesh.</h2>
+        <p>
+          You choose the item. Send the product link (or screenshot). We purchase from approved US retailers and ship to Bangladesh on our batch cycle.
+          You pay <b>50% advance</b> to confirm your order. Delivery cycle is <b>25 days</b>.
+        </p>
+
+        <div class="badges" role="list">
+          <span class="badge"><span class="dot"></span> Authentic purchase (invoice-based)</span>
+          <span class="badge"><span class="dot blue"></span> Transparent estimate before payment</span>
+          <span class="badge"><span class="dot warn"></span> Batch shipping deadline rule</span>
+        </div>
+
+        <div class="stores" aria-label="approved stores">
+          <span class="logo">Nike.com / SNKRS</span>
+          <span class="logo">Adidas.com</span>
+          <span class="logo">Puma.com</span>
+          <span class="logo">Foot Locker</span>
+          <span class="logo">Finish Line</span>
+          <span class="logo">Amazon (Sold by Amazon)</span>
+        </div>
+
+        <div class="note">
+          <b>Starting focus:</b> Shoes only. (We’ll expand to accessories & apparel soon.)<br/>
+          <b>Batch delivery cycle:</b> ~25 days from ship date. <b>Submission deadline</b> is <b>5 days before</b> your chosen batch ship date.
+        </div>
+
+        <div id="how" class="steps" style="margin-top:16px">
+          <div class="step">
+            <b>1) Submit Product</b>
+            <span>Paste link (or add screenshot note), choose store, size, and batch ship date.</span>
+          </div>
+          <div class="step">
+            <b>2) Pay 50% Advance</b>
+            <span>We lock your estimate & confirm your order. Limited items may require higher advance.</span>
+          </div>
+          <div class="step">
+            <b>3) We Buy + Deliver</b>
+            <span>We purchase in US, ship via batch, and deliver to Bangladesh in ~25 days.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <aside class="card">
+      <div class="pad">
+        <h3>Quick Fee Rules</h3>
+        <div class="calc">
+          <div class="kvs">
+            <div>Category enabled</div><div><b class="ok">Shoes</b></div>
+            <div>Service / logistics fee</div><div><b id="feeDisplay" class="mono">৳2,500</b></div>
+            <div>Advance required</div><div><b class="mono">50%</b></div>
+            <div>Delivery cycle</div><div><b class="mono">25 days</b></div>
+            <div>Submission deadline</div><div><b class="mono">Ship date − 5 days</b></div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="chip"><span class="dot"></span> Invoice / proof available</div>
+        <div class="chip" style="margin-top:10px"><span class="dot blue"></span> Approved store only</div>
+        <div class="chip" style="margin-top:10px"><span class="dot warn"></span> No cancellation after purchase</div>
+
+        <div class="divider"></div>
+
+        <p class="fine">
+          Tip: Choose a batch ship date that gives you enough time before the <b>deadline</b>.
+          We recommend submitting 7–10 days early for limited editions.
+        </p>
+      </div>
+    </aside>
+  </section>
+
+  <section id="estimate" class="section grid">
+    <div class="card">
+      <div class="pad">
+        <h3>Get Estimate & Submit Product</h3>
+        <p class="fine" style="margin-top:-2px">
+          Fill this out — you’ll instantly see an estimate and the required 50% advance.
+          (This page does not process payments; you can connect bKash/Nagad/Bank later.)
+        </p>
+
+        <form id="orderForm">
+          <div class="row">
+            <div>
+              <label>Full Name
+                <input required name="name" placeholder="Your name" />
+              </label>
+            </div>
+            <div>
+              <label>Bangladesh Phone (WhatsApp preferred)
+                <input required name="phone" placeholder="+8801XXXXXXXXX" />
+              </label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <label>Product Category
+                <select id="category" name="category">
+                  <option value="shoes" selected>Shoes (Enabled)</option>
+                  <option value="accessories" disabled>Accessories (Coming soon)</option>
+                  <option value="apparel" disabled>Apparel (Coming soon)</option>
+                </select>
+              </label>
+              <div class="hint">Currently accepting shoes only.</div>
+            </div>
+            <div>
+              <label>Approved Store
+                <select id="store" name="store" required>
+                  <option value="nike">Nike / SNKRS</option>
+                  <option value="adidas">Adidas</option>
+                  <option value="puma">Puma</option>
+                  <option value="footlocker">Foot Locker</option>
+                  <option value="finishline">Finish Line</option>
+                  <option value="amazon">Amazon (Sold by Amazon)</option>
+                </select>
+              </label>
+              <div class="hint">Amazon items must be sold by Amazon (not third-party sellers).</div>
+            </div>
+          </div>
+
+          <div>
+            <label>Product Link (URL)
+              <input required id="productLink" name="link" placeholder="Paste the product link here…" />
+            </label>
+            <div class="hint">If you only have a screenshot, write “Screenshot available” in the Notes field below.</div>
+          </div>
+
+          <div class="row">
+            <div>
+              <label>Size (US)
+                <input required name="size" placeholder="e.g., 9 / 10.5 / 11" />
+              </label>
+            </div>
+            <div>
+              <label>Color / Variant
+                <input required name="variant" placeholder="e.g., Black/Volt, Special Edition" />
+              </label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <label>Product Price (USD)
+                <input required id="usdPrice" type="number" min="1" step="0.01" placeholder="e.g., 120" />
+              </label>
+              <div class="hint">Use the price before US tax (if possible). We’ll confirm final checkout total.</div>
+            </div>
+            <div>
+              <label>USD→BDT Rate (editable)
+                <input id="fxRate" type="number" min="1" step="0.01" placeholder="e.g., 125" />
+              </label>
+              <div class="hint">Default is set for estimation. Final conversion rate is locked at payment time.</div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <label>Batch Ship Date (choose)
+                <select id="shipDate" required></select>
+              </label>
+              <div class="hint">Submission deadline is <b>5 days before</b> the ship date.</div>
+            </div>
+            <div>
+              <label>Limited / Special Edition?
+                <select id="limited" required>
+                  <option value="no" selected>No</option>
+                  <option value="yes">Yes (Limited/Special)</option>
+                </select>
+              </label>
+              <div class="hint">Limited items may require higher advance to secure the purchase.</div>
+            </div>
+          </div>
+
+          <div>
+            <label>Notes (optional)
+              <textarea id="notes" placeholder="Example: Screenshot available. Need fast confirmation. Any special instructions…"></textarea>
+            </label>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="calc" aria-live="polite">
+            <div class="kvs">
+              <div>Estimated Product Cost</div><div><b id="bdtProduct" class="mono">৳0</b></div>
+              <div>Service / Logistics Fee (Shoes)</div><div><b id="bdtFee" class="mono">৳2,500</b></div>
+              <div>Estimated Total</div><div><b id="bdtTotal" class="mono">৳0</b></div>
+              <div>Advance Due Now</div><div><b id="bdtAdvance" class="mono">৳0</b></div>
+              <div>Remaining on Delivery</div><div><b id="bdtRemain" class="mono">৳0</b></div>
+              <div>Submission Deadline</div><div><b id="deadline" class="mono">—</b></div>
+              <div>Estimated Delivery Window</div><div><b id="deliveryWin" class="mono">—</b></div>
+            </div>
+
+            <div class="subrow">
+              <button type="button" class="btn" id="copySummary">Copy Order Summary</button>
+              <a class="btn" href="#contact" style="background:linear-gradient(135deg, rgba(255,255,255,.10), rgba(255,255,255,.04))">How to pay</a>
+            </div>
+
+            <div class="fine">
+              This is an estimate only. Final total may change if the store adds tax, shipping, or if the item becomes unavailable.
+              We confirm before purchase whenever possible.
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <aside class="card">
+      <div class="pad">
+        <h3>Current Product Coverage</h3>
+        <p class="fine">We are starting with shoes only from approved stores.</p>
+
+        <div class="calc">
+          <div class="kvs">
+            <div>Supported category</div><div><b class="ok">Shoes</b></div>
+            <div>Fee model</div><div><b class="mono">Fixed fee</b></div>
+            <div>Fee (per pair)</div><div><b class="mono">৳2,500</b></div>
+            <div>Delivery cycle</div><div><b class="mono">~25 days</b></div>
+          </div>
+          <div class="divider"></div>
+          <div class="fine">
+            Next expansions (coming soon): accessories (shin guards, socks, gloves), apparel (jerseys, jackets), bags.
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <h3 style="margin-top:12px">Batch Schedule Logic</h3>
+        <p class="fine">
+          Ship dates are generated automatically (every 25 days from the next available ship date).
+          Deadline is always <b>5 days before</b>.
+          You can edit ship dates in the code later if you want fixed monthly dates.
+        </p>
+      </div>
+    </aside>
+  </section>
+
+  <section id="terms" class="section">
+    <div class="card">
+      <div class="pad">
+        <h3>Terms & Conditions</h3>
+        <div class="tc">
+          <ul>
+            <li><b>Approved stores only:</b> Nike/SNKRS, Adidas, Puma, Foot Locker, Finish Line, and Amazon items sold by Amazon (no third-party sellers).</li>
+            <li><b>50% advance required</b> to confirm your order. <b>Limited/Special editions may require higher advance</b> (up to 60–70%) due to sell-out risk.</li>
+            <li><b>No cancellation after purchase:</b> Once we buy the item from the store, the order cannot be canceled and the advance is non-refundable.</li>
+            <li><b>Customer size responsibility:</b> You are responsible for selecting correct size/variant. We are not liable for sizing issues if you requested the size.</li>
+            <li><b>Delivery timeline:</b> Estimated delivery is <b>~25 days</b> from batch ship date. Delays can occur due to airline/cargo/customs/holiday disruptions.</li>
+            <li><b>Submission deadline:</b> You must submit the product details and pay the advance by <b>5 days before</b> the chosen batch ship date.</li>
+            <li><b>Box condition:</b> Shoe boxes may have dents/creases due to cargo handling. Product authenticity is the priority.</li>
+            <li><b>Currency rate lock:</b> USD→BDT conversion rate is locked at payment time for the estimate and billing.</li>
+            <li><b>Item availability:</b> If the item becomes unavailable before purchase, we will notify you and offer an alternative option or refund the advance (if we have not purchased).</li>
+            <li><b>Wrong item handling:</b> If we purchase the wrong item (wrong link/variant), we will correct it. If the customer provided incorrect info, customer bears the outcome.</li>
+            <li><b>Communication:</b> Updates are provided via Facebook Messenger / WhatsApp / phone (as provided in the form).</li>
+            <li><b>Fraud prevention:</b> We may request identity verification for high-value orders.</li>
+          </ul>
+          <p class="fine" style="margin-top:12px">
+            By submitting an order and paying the advance, you agree to these terms.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="card">
+      <div class="pad">
+        <h3>Contact & Payment</h3>
+        <p class="fine">
+          Add your payment methods here (bKash/Nagad/Bank). For now, you can place the order using the form above and contact us to pay the advance.
+        </p>
+
+        <div class="steps" style="grid-template-columns: repeat(3,1fr)">
+          <div class="step">
+            <b>Facebook Page</b>
+            <span>Reply to your message thread with the copied order summary.</span>
+          </div>
+          <div class="step">
+            <b>WhatsApp</b>
+            <span>Send your order summary + payment screenshot to confirm.</span>
+          </div>
+          <div class="step">
+            <b>Delivery</b>
+            <span>Remaining balance is due on delivery/collection in Bangladesh.</span>
+          </div>
+        </div>
+
+        <div class="note" style="margin-top:14px">
+          <b>Owner note:</b> We are building this service to make US sports imports simple, authentic, and predictable — without the stress of searching for products ourselves.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © <span id="year"></span> Sports Solutions Inc. • US→BD Sports Import Service • Built as a one-page intake + estimate site
+  </footer>
+</main>
+
+<script>
+  // ---- Helpers
+  const fmtBDT = (n) => {
+    const v = Math.max(0, Number(n || 0));
+    return "৳" + v.toLocaleString("en-US", {maximumFractionDigits: 0});
+  };
+
+  // ---- Config (edit anytime)
+  const CONFIG = {
+    deliveryDays: 25,
+    deadlineDaysBeforeShip: 5,
+    // Shoes fee in BDT (your profit is built in here)
+    shoeFeeBDT: 2500,
+    // Default FX rate if user doesn't change it
+    defaultFx: 125,
+    // Generate upcoming batch ship dates every N days:
+    shipBatchEveryDays: 25,
+    // How many future batches to show
+    batchesToShow: 6
+  };
+
+  // ---- Populate ship date dropdown (auto)
+  const shipSel = document.getElementById("shipDate");
+
+  function addDays(date, days){
+    const d = new Date(date);
+    d.setDate(d.getDate() + days);
+    return d;
+  }
+  function toISODate(d){
+    // yyyy-mm-dd
+    const y = d.getFullYear();
+    const m = String(d.getMonth()+1).padStart(2,'0');
+    const da = String(d.getDate()).padStart(2,'0');
+    return `${y}-${m}-${da}`;
+  }
+  function prettyDate(d){
+    return d.toLocaleDateString(undefined, {weekday:"short", year:"numeric", month:"short", day:"numeric"});
+  }
+
+  function populateShipDates(){
+    shipSel.innerHTML = "";
+    const now = new Date();
+    // Next ship date: 7 days from now (so there is always a realistic deadline window)
+    let ship = addDays(now, 7);
+
+    for(let i=0;i<CONFIG.batchesToShow;i++){
+      const opt = document.createElement("option");
+      opt.value = toISODate(ship);
+      opt.textContent = `${prettyDate(ship)} (Batch #${i+1})`;
+      shipSel.appendChild(opt);
+      ship = addDays(ship, CONFIG.shipBatchEveryDays);
+    }
+  }
+
+  // ---- Estimate logic
+  const usdPriceEl = document.getElementById("usdPrice");
+  const fxEl = document.getElementById("fxRate");
+  const limitedEl = document.getElementById("limited");
+
+  const bdtProductEl = document.getElementById("bdtProduct");
+  const bdtFeeEl = document.getElementById("bdtFee");
+  const bdtTotalEl = document.getElementById("bdtTotal");
+  const bdtAdvanceEl = document.getElementById("bdtAdvance");
+  const bdtRemainEl = document.getElementById("bdtRemain");
+  const deadlineEl = document.getElementById("deadline");
+  const deliveryWinEl = document.getElementById("deliveryWin");
+
+  function computeAdvancePct(){
+    // Base rule: 50%
+    // Limited/Special: still shows 50% as default estimate, but warns that it may be 60–70%.
+    return 0.50;
+  }
+
+  function updateEstimate(){
+    const usd = Number(usdPriceEl.value || 0);
+    const fx = Number(fxEl.value || CONFIG.defaultFx);
+
+    const productBDT = usd * fx;
+    const feeBDT = CONFIG.shoeFeeBDT;
+    const totalBDT = productBDT + feeBDT;
+
+    const advPct = computeAdvancePct();
+    const advBDT = totalBDT * advPct;
+    const remBDT = totalBDT - advBDT;
+
+    bdtProductEl.textContent = fmtBDT(productBDT);
+    bdtFeeEl.textContent = fmtBDT(feeBDT);
+    bdtTotalEl.textContent = fmtBDT(totalBDT);
+    bdtAdvanceEl.textContent = fmtBDT(advBDT);
+    bdtRemainEl.textContent = fmtBDT(remBDT);
+
+    // Deadline and delivery window
+    const shipISO = shipSel.value;
+    if(shipISO){
+      const shipDate = new Date(shipISO + "T12:00:00");
+      const deadlineDate = addDays(shipDate, -CONFIG.deadlineDaysBeforeShip);
+      const deliveryEnd = addDays(shipDate, CONFIG.deliveryDays);
+
+      deadlineEl.textContent = `${prettyDate(deadlineDate)} (Ship − ${CONFIG.deadlineDaysBeforeShip} days)`;
+      deliveryWinEl.textContent = `${prettyDate(shipDate)} → ${prettyDate(deliveryEnd)} (~${CONFIG.deliveryDays} days)`;
+    } else {
+      deadlineEl.textContent = "—";
+      deliveryWinEl.textContent = "—";
+    }
+
+    // Limited edition hint
+    const feeDisplay = document.getElementById("feeDisplay");
+    feeDisplay.textContent = fmtBDT(CONFIG.shoeFeeBDT);
+
+    const limited = limitedEl.value === "yes";
+    if(limited){
+      // Add small warning styling
+      bdtAdvanceEl.classList.add("warnTxt");
+      bdtAdvanceEl.title = "Limited/Special items may require 60–70% advance to secure purchase.";
+    } else {
+      bdtAdvanceEl.classList.remove("warnTxt");
+      bdtAdvanceEl.title = "";
+    }
+  }
+
+  // ---- Copy summary
+  document.getElementById("copySummary").addEventListener("click", async () => {
+    const name = document.querySelector('[name="name"]').value || "";
+    const phone = document.querySelector('[name="phone"]').value || "";
+    const store = document.getElementById("store").selectedOptions[0].textContent;
+    const link = document.getElementById("productLink").value || "";
+    const size = document.querySelector('[name="size"]').value || "";
+    const variant = document.querySelector('[name="variant"]').value || "";
+    const ship = document.getElementById("shipDate").selectedOptions[0]?.textContent || "";
+    const usd = Number(usdPriceEl.value || 0);
+    const fx = Number(fxEl.value || CONFIG.defaultFx);
+
+    const productBDT = usd * fx;
+    const feeBDT = CONFIG.shoeFeeBDT;
+    const totalBDT = productBDT + feeBDT;
+    const advBDT = totalBDT * 0.50;
+
+    const notes = document.getElementById("notes").value || "";
+    const limited = document.getElementById("limited").value === "yes" ? "Yes (Limited/Special)" : "No";
+
+    const summary =
+`Sports Solutions Inc. — Order Summary
+Name: ${name}
+Phone: ${phone}
+Category: Shoes
+Store: ${store}
+Product Link: ${link}
+Size: ${size}
+Variant: ${variant}
+Limited/Special: ${limited}
+Selected Batch: ${ship}
+
+Estimate:
+- Product: ${fmtBDT(productBDT)} (USD ${usd.toFixed(2)} @ rate ${fx})
+- Service Fee: ${fmtBDT(feeBDT)}
+- Total: ${fmtBDT(totalBDT)}
+- 50% Advance Due: ${fmtBDT(advBDT)}
+
+Notes: ${notes || "—"}
+`;
+
+    try{
+      await navigator.clipboard.writeText(summary);
+      alert("Copied! Paste it in Messenger/WhatsApp to place your order.");
+    }catch(e){
+      // Fallback
+      prompt("Copy this order summary:", summary);
+    }
+  });
+
+  // ---- Init
+  document.getElementById("year").textContent = new Date().getFullYear();
+  populateShipDates();
+
+  // Set default FX for convenience
+  fxEl.value = CONFIG.defaultFx;
+
+  // Bind updates
+  ["input","change"].forEach(evt => {
+    usdPriceEl.addEventListener(evt, updateEstimate);
+    fxEl.addEventListener(evt, updateEstimate);
+    shipSel.addEventListener(evt, updateEstimate);
+    limitedEl.addEventListener(evt, updateEstimate);
+  });
+
+  // First render
+  updateEstimate();
+</script>
+</body>
+</html>

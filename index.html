@@ -1,162 +1,171 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Sports Solutions Inc. — US to BD Sport Imports</title>
-  <meta name="description" content="Sports Solutions Inc. — Authentic US Store/Online purchase + import service to Bangladesh." />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <style>
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      background: linear-gradient(180deg,#060b1a,#0b132b);
-      color:#eaf0ff;
-    }
-    .wrap{max-width:1100px;margin:auto;padding:24px}
-    h1,h2,h3{margin-top:0}
-    .card{
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.12);
-      border-radius:16px;
-      padding:20px;
-      margin-bottom:20px;
-    }
-    input,select,textarea,button{
-      width:100%;
-      padding:12px;
-      margin-top:6px;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,.2);
-      background:#0b132b;
-      color:#fff;
-      font-size:14px;
-    }
-    textarea{resize:vertical}
-    label{font-size:13px;color:#b9c3ff}
-    .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    @media(max-width:700px){.row{grid-template-columns:1fr}}
-    .btn{
-      background:linear-gradient(135deg,#6dffb3,#66b8ff);
-      color:#000;
-      font-weight:700;
-      cursor:pointer;
-      margin-top:12px;
-    }
-    .btn.secondary{
-      background:transparent;
-      color:#eaf0ff;
-      border:1px solid rgba(255,255,255,.3);
-    }
-    .calc{
-      background:rgba(255,255,255,.04);
-      padding:14px;
-      border-radius:12px;
-      margin-top:12px;
-      font-size:14px;
-    }
-    .mono{font-family:monospace}
-    footer{text-align:center;color:#9aa4d6;font-size:13px;margin-top:30px}
-  </style>
+<title>Sports Solutions Inc. — US to BD Sports Imports</title>
+
+<style>
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+  background:linear-gradient(180deg,#060b1a,#0b132b);
+  color:#eaf0ff;
+}
+.wrap{max-width:1100px;margin:auto;padding:24px}
+h1,h2,h3{margin-top:0}
+.card{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:16px;
+  padding:22px;
+  margin-bottom:22px;
+}
+label{font-size:13px;color:#b9c3ff}
+input,select,textarea,button{
+  width:100%;
+  padding:12px;
+  margin-top:6px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.25);
+  background:#0b132b;
+  color:#fff;
+  font-size:14px;
+}
+textarea{resize:vertical}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:700px){.row{grid-template-columns:1fr}}
+.btn{
+  background:linear-gradient(135deg,#6dffb3,#66b8ff);
+  color:#000;
+  font-weight:700;
+  cursor:pointer;
+  margin-top:14px;
+}
+.btn.secondary{
+  background:transparent;
+  color:#eaf0ff;
+  border:1px solid rgba(255,255,255,.3);
+}
+.calc{
+  background:rgba(255,255,255,.04);
+  padding:14px;
+  border-radius:12px;
+  margin-top:14px;
+  font-size:14px;
+}
+.mono{font-family:monospace}
+footer{
+  text-align:center;
+  color:#9aa4d6;
+  font-size:13px;
+  margin-top:40px;
+}
+</style>
 </head>
 
 <body>
 <div class="wrap">
 
-  <h1>Sports Solutions Inc.</h1>
-  <p>US → Bangladesh Authentic Sports Shoe Import Service</p>
+<h1>Sports Solutions Inc.</h1>
+<p>Authentic US → Bangladesh Sports Shoe Import Service</p>
 
-  <!-- FORM START -->
-  <div class="card">
-    <h3>Submit Your Product</h3>
+<div class="card">
+<h3>Submit Your Product</h3>
 
-    <form
-      name="order"
-      method="POST"
-      data-netlify="true"
-      netlify-honeypot="bot-field"
-      id="orderForm">
+<form
+  name="order"
+  method="POST"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  action="/success.html"
+  id="orderForm">
 
-      <input type="hidden" name="form-name" value="order">
-      <input type="hidden" name="bot-field">
+<input type="hidden" name="form-name" value="order">
+<input type="hidden" name="bot-field">
 
-      <div class="row">
-        <label>Full Name
-          <input name="name" required>
-        </label>
-        <label>Phone / WhatsApp
-          <input name="phone" required>
-        </label>
-      </div>
+<div class="row">
+  <label>Full Name
+    <input name="name" required>
+  </label>
+  <label>Phone / WhatsApp
+    <input name="phone" required>
+  </label>
+</div>
 
-      <div class="row">
-        <label>Store
-          <select name="store" id="store">
-            <option>Nike / SNKRS</option>
-            <option>Adidas</option>
-            <option>Puma</option>
-            <option>Foot Locker</option>
-            <option>Finish Line</option>
-            <option>Amazon (Sold by Amazon)</option>
-          </select>
-        </label>
-        <label>Size (US)
-          <input name="size" required>
-        </label>
-      </div>
+<div class="row">
+  <label>Store
+    <select name="store" id="store" required>
+      <option>Nike / SNKRS</option>
+      <option>Adidas</option>
+      <option>Puma</option>
+      <option>Foot Locker</option>
+      <option>Finish Line</option>
+      <option>Amazon (Sold by Amazon)</option>
+    </select>
+  </label>
+  <label>Shoe Size (US)
+    <input name="size" required>
+  </label>
+</div>
 
-      <label>Product Link
-        <input name="link" id="productLink" required>
-      </label>
+<label>Product Link
+  <input name="product_link" id="productLink" required>
+</label>
 
-      <div class="row">
-        <label>Price (USD)
-          <input type="number" id="usdPrice" required>
-        </label>
-        <label>USD → BDT Rate
-          <input type="number" id="fxRate" value="125">
-        </label>
-      </div>
+<div class="row">
+  <label>Product Price (USD)
+    <input type="number" name="usd_price" id="usdPrice" required>
+  </label>
+  <label>USD → BDT Rate
+    <input type="number" name="fx_rate" id="fxRate" value="125">
+  </label>
+</div>
 
-      <label>Notes
-        <textarea name="notes"></textarea>
-      </label>
+<label>Notes (optional)
+  <textarea name="notes"></textarea>
+</label>
 
-      <!-- CALC -->
-      <div class="calc">
-        <div>Total (est): <b id="totalBDT" class="mono">৳0</b></div>
-        <div>50% Advance: <b id="advanceBDT" class="mono">৳0</b></div>
-      </div>
-
-      <button type="submit" class="btn">Submit Order (Netlify)</button>
-    </form>
-
-    <button class="btn secondary" onclick="sendWhatsApp()">Send via WhatsApp</button>
+<div class="calc">
+  <div>Total Estimated Cost: <b id="totalBDT" class="mono">৳0</b></div>
+  <div>50% Advance Required: <b id="advanceBDT" class="mono">৳0</b></div>
+  <div style="margin-top:6px;font-size:13px;color:#9aa4d6">
+    Delivery cycle ~25 days • Shoes only • Service fee ৳2500 included
   </div>
+</div>
 
-  <footer>
-    © 2025 Sports Solutions Inc. • Delivery cycle ~25 days
-  </footer>
+<button type="submit" class="btn">Submit Order (Netlify)</button>
+</form>
+
+<button class="btn secondary" onclick="sendWhatsApp()">Send Order via WhatsApp</button>
+
+</div>
+
+<footer>
+© 2025 Sports Solutions Inc. • Authentic US Purchase • No Replicas
+</footer>
 
 </div>
 
 <script>
-const FEE = 2500;
-const WA_NUMBER = "+14438620065";
+const SERVICE_FEE = 2500;
+const WA_NUMBER = "14438620065";
 
-function fmt(n){
+function formatBDT(n){
   return "৳" + Math.round(n).toLocaleString();
 }
 
-function calc(){
+function calculate(){
   const usd = Number(document.getElementById("usdPrice").value || 0);
   const fx = Number(document.getElementById("fxRate").value || 125);
-  const total = usd * fx + FEE;
-  document.getElementById("totalBDT").textContent = fmt(total);
-  document.getElementById("advanceBDT").textContent = fmt(total * 0.5);
+  const total = usd * fx + SERVICE_FEE;
+  document.getElementById("totalBDT").textContent = formatBDT(total);
+  document.getElementById("advanceBDT").textContent = formatBDT(total * 0.5);
 }
-document.getElementById("usdPrice").addEventListener("input", calc);
-document.getElementById("fxRate").addEventListener("input", calc);
+
+document.getElementById("usdPrice").addEventListener("input", calculate);
+document.getElementById("fxRate").addEventListener("input", calculate);
 
 function sendWhatsApp(){
   const name = document.querySelector('[name="name"]').value;
@@ -165,24 +174,25 @@ function sendWhatsApp(){
   const link = document.getElementById("productLink").value;
   const usd = document.getElementById("usdPrice").value;
   const fx = document.getElementById("fxRate").value;
+  const total = usd * fx + SERVICE_FEE;
 
-  const total = usd * fx + FEE;
-
-  const msg =
+  const message =
 `Sports Solutions Inc. Order
+
 Name: ${name}
 Phone: ${phone}
 Store: ${store}
-Link: ${link}
+Product Link: ${link}
 USD Price: ${usd}
 Estimated Total: ৳${Math.round(total)}
-Advance Due (50%): ৳${Math.round(total*0.5)}`;
+Advance Due (50%): ৳${Math.round(total * 0.5)}
 
-  const url = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
-  window.open(url,"_blank");
+Delivery cycle ~25 days`;
+
+  const url = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
+  window.open(url, "_blank");
 }
 </script>
 
 </body>
 </html>
-

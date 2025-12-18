@@ -5,194 +5,695 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
 <title>Sports Solutions Inc. — US to BD Sports Imports</title>
+<meta name="description" content="Sports Solutions Inc. — Authentic US store purchase + batch import service to Bangladesh. Submit product link, get estimate, pay 50% advance, receive in ~25 days.">
 
 <style>
-body{
-  margin:0;
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
-  background:linear-gradient(180deg,#060b1a,#0b132b);
-  color:#eaf0ff;
-}
-.wrap{max-width:1100px;margin:auto;padding:24px}
-h1,h2,h3{margin-top:0}
-.card{
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:16px;
-  padding:22px;
-  margin-bottom:22px;
-}
-label{font-size:13px;color:#b9c3ff}
-input,select,textarea,button{
-  width:100%;
-  padding:12px;
-  margin-top:6px;
-  border-radius:12px;
-  border:1px solid rgba(255,255,255,.25);
-  background:#0b132b;
-  color:#fff;
-  font-size:14px;
-}
-textarea{resize:vertical}
-.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-@media(max-width:700px){.row{grid-template-columns:1fr}}
-.btn{
-  background:linear-gradient(135deg,#6dffb3,#66b8ff);
-  color:#000;
-  font-weight:700;
-  cursor:pointer;
-  margin-top:14px;
-}
-.btn.secondary{
-  background:transparent;
-  color:#eaf0ff;
-  border:1px solid rgba(255,255,255,.3);
-}
-.calc{
-  background:rgba(255,255,255,.04);
-  padding:14px;
-  border-radius:12px;
-  margin-top:14px;
-  font-size:14px;
-}
-.mono{font-family:monospace}
-footer{
-  text-align:center;
-  color:#9aa4d6;
-  font-size:13px;
-  margin-top:40px;
-}
+  :root{
+    --bg1:#060b1a;
+    --bg2:#0b132b;
+    --card:rgba(255,255,255,.06);
+    --line:rgba(255,255,255,.12);
+    --text:#eaf0ff;
+    --mut:#aeb7e6;
+    --mut2:#9aa4d6;
+    --acc1:#6dffb3;
+    --acc2:#66b8ff;
+    --warn:#ffd36d;
+    --danger:#ff6d8b;
+    --radius:18px;
+    --radius2:14px;
+    --shadow: 0 18px 60px rgba(0,0,0,.35);
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+    color:var(--text);
+    background:
+      radial-gradient(900px 600px at 10% 0%, rgba(102,184,255,.18), transparent 55%),
+      radial-gradient(900px 600px at 90% 10%, rgba(109,255,179,.16), transparent 55%),
+      linear-gradient(180deg,var(--bg1),var(--bg2));
+  }
+
+  .wrap{max-width:1100px;margin:auto;padding:22px}
+  a{color:inherit;text-decoration:none}
+
+  /* Top bar */
+  .topbar{
+    position:sticky; top:0; z-index:50;
+    backdrop-filter: blur(14px);
+    background: linear-gradient(180deg, rgba(6,11,26,.82), rgba(6,11,26,.40));
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .nav{
+    max-width:1100px;
+    margin:0 auto;
+    padding:14px 22px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:14px;
+  }
+  .brand{
+    display:flex; align-items:center; gap:12px;
+    min-width: 240px;
+  }
+  .mark{
+    width:42px;height:42px;border-radius:14px;
+    border:1px solid rgba(255,255,255,.14);
+    background:
+      radial-gradient(14px 14px at 30% 30%, rgba(109,255,179,.95), transparent 60%),
+      radial-gradient(18px 18px at 70% 70%, rgba(102,184,255,.95), transparent 60%),
+      linear-gradient(135deg, rgba(255,255,255,.12), rgba(255,255,255,.02));
+    box-shadow: 0 10px 30px rgba(0,0,0,.25);
+  }
+  .brand b{display:block; font-size:14.5px; letter-spacing:.2px}
+  .brand small{display:block; color:var(--mut2); font-size:12px; margin-top:2px}
+
+  .navlinks{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+  .navlinks a{
+    font-size:13px; color:var(--mut);
+    padding:8px 10px;
+    border-radius:12px;
+    border:1px solid transparent;
+  }
+  .navlinks a:hover{
+    color:var(--text);
+    border-color: rgba(255,255,255,.12);
+    background: rgba(255,255,255,.04);
+  }
+  .navcta{
+    display:flex; align-items:center; gap:10px;
+  }
+  .pill{
+    font-size:12.5px;
+    color:rgba(234,240,255,.92);
+    border:1px solid rgba(255,255,255,.14);
+    background:rgba(255,255,255,.06);
+    padding:8px 10px;
+    border-radius:999px;
+  }
+  .pill strong{color:var(--acc1)}
+  .btnTop{
+    display:inline-flex; align-items:center; justify-content:center;
+    padding:9px 12px;
+    border-radius:14px;
+    font-size:13px;
+    font-weight:700;
+    border:1px solid rgba(255,255,255,.18);
+    background: linear-gradient(135deg, rgba(109,255,179,.22), rgba(102,184,255,.18));
+    box-shadow: 0 14px 34px rgba(0,0,0,.22);
+    cursor:pointer;
+  }
+  .btnTop:hover{transform: translateY(-1px)}
+  @media (max-width: 860px){
+    .navcta{display:none}
+  }
+
+  /* Cards + layout */
+  .card{
+    background: var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow: var(--shadow);
+    overflow:hidden;
+  }
+  .pad{padding:22px}
+  h1,h2,h3{margin:0 0 10px}
+  p{margin:0 0 10px; color:var(--mut); line-height:1.6}
+
+  .grid{
+    display:grid;
+    grid-template-columns: 1.15fr .85fr;
+    gap:16px;
+    margin-top:18px;
+  }
+  @media (max-width: 900px){
+    .grid{grid-template-columns:1fr}
+  }
+
+  /* Hero */
+  .heroTitle{
+    font-size:38px;
+    line-height:1.06;
+    letter-spacing:-.7px;
+    margin-bottom:10px;
+  }
+  @media (max-width: 520px){
+    .heroTitle{font-size:30px}
+  }
+
+  .heroBadges{
+    display:flex; gap:10px; flex-wrap:wrap;
+    margin-top:12px;
+  }
+  .badge{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:8px 10px;
+    border-radius:999px;
+    border:1px solid rgba(255,255,255,.14);
+    background:rgba(255,255,255,.05);
+    color:rgba(234,240,255,.9);
+    font-size:12.5px;
+  }
+  .dot{width:9px;height:9px;border-radius:99px;background:var(--acc1)}
+  .dot.blue{background:var(--acc2)}
+  .dot.warn{background:var(--warn)}
+
+  .storeBadges{
+    display:flex; gap:10px; flex-wrap:wrap;
+    margin-top:14px;
+  }
+  .store{
+    font-size:12.5px;
+    color:rgba(234,240,255,.86);
+    border:1px dashed rgba(255,255,255,.16);
+    background:rgba(255,255,255,.04);
+    padding:10px 12px;
+    border-radius:14px;
+  }
+
+  .heroCTA{
+    display:flex; gap:10px; flex-wrap:wrap;
+    margin-top:14px;
+  }
+  .primaryBtn{
+    display:inline-flex; align-items:center; justify-content:center;
+    padding:11px 14px;
+    border-radius:14px;
+    font-weight:800;
+    border:1px solid rgba(255,255,255,.18);
+    background: linear-gradient(135deg, rgba(109,255,179,.30), rgba(102,184,255,.20));
+    cursor:pointer;
+  }
+  .secondaryBtn{
+    display:inline-flex; align-items:center; justify-content:center;
+    padding:11px 14px;
+    border-radius:14px;
+    font-weight:700;
+    border:1px solid rgba(255,255,255,.18);
+    background: rgba(255,255,255,.05);
+  }
+
+  /* Form */
+  label{font-size:12.5px;color:#b9c3ff}
+  input,select,textarea,button{
+    width:100%;
+    padding:12px;
+    margin-top:6px;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,.22);
+    background: rgba(0,0,0,.22);
+    color:#fff;
+    font-size:14px;
+    outline:none;
+  }
+  input::placeholder, textarea::placeholder{color: rgba(174,183,230,.65)}
+  textarea{resize:vertical; min-height:90px}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:700px){.row{grid-template-columns:1fr}}
+
+  .hint{font-size:12px;color:rgba(174,183,230,.80); margin-top:6px; line-height:1.4}
+
+  .calc{
+    background:rgba(255,255,255,.04);
+    padding:14px;
+    border-radius:12px;
+    margin-top:14px;
+    font-size:14px;
+    border:1px solid rgba(255,255,255,.10);
+  }
+  .kvs{
+    display:grid;
+    grid-template-columns: 1fr auto;
+    gap:8px 12px;
+    color:var(--mut);
+    font-size:13px;
+  }
+  .kvs b{color:var(--text)}
+  .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
+
+  .btnRow{
+    display:flex; gap:10px; flex-wrap:wrap;
+    margin-top:12px;
+  }
+  .btn{
+    flex: 1 1 180px;
+    border-radius:14px;
+    font-weight:800;
+    cursor:pointer;
+    border:1px solid rgba(255,255,255,.18);
+    background: linear-gradient(135deg, rgba(109,255,179,.90), rgba(102,184,255,.75));
+    color:#061021;
+  }
+  .btn.secondary{
+    background: rgba(255,255,255,.06);
+    color: var(--text);
+    font-weight:750;
+  }
+  .btn:disabled{
+    cursor:not-allowed;
+    opacity:.45;
+    filter:grayscale(.1);
+  }
+
+  .sectionTitle{
+    font-size:16px;
+    letter-spacing:.2px;
+    margin:0 0 10px;
+  }
+
+  /* Accordion terms */
+  details{
+    border:1px solid rgba(255,255,255,.12);
+    background:rgba(255,255,255,.04);
+    border-radius:14px;
+    padding:12px 12px;
+    margin-top:10px;
+  }
+  summary{
+    cursor:pointer;
+    font-weight:800;
+    color: rgba(234,240,255,.92);
+  }
+  details p, details li{color:rgba(174,183,230,.92)}
+  ul{margin:10px 0 0 18px}
+  li{margin:7px 0}
+
+  footer{
+    text-align:center;
+    color:#9aa4d6;
+    font-size:13px;
+    margin:36px 0 26px;
+    line-height:1.6;
+  }
 </style>
 </head>
 
 <body>
-<div class="wrap">
+  <div class="topbar">
+    <div class="nav">
+      <div class="brand">
+        <div class="mark" aria-hidden="true"></div>
+        <div>
+          <b>Sports Solutions Inc.</b>
+          <small>Authentic US store purchase + batch delivery to Bangladesh</small>
+        </div>
+      </div>
 
-<h1>Sports Solutions Inc.</h1>
-<p>Authentic US → Bangladesh Sports Shoe Import Service</p>
+      <div class="navlinks" aria-label="primary">
+        <a href="#estimate">Get estimate</a>
+        <a href="#how">How it works</a>
+        <a href="#terms">Terms</a>
+        <a href="#contact">Contact</a>
+      </div>
 
-<div class="card">
-<h3>Submit Your Product</h3>
-
-<form
-  name="order"
-  method="POST"
-  data-netlify="true"
-  netlify-honeypot="bot-field"
-  action="/success.html"
-  id="orderForm">
-
-<input type="hidden" name="form-name" value="order">
-<input type="hidden" name="bot-field">
-
-<div class="row">
-  <label>Full Name
-    <input name="name" required>
-  </label>
-  <label>Phone / WhatsApp
-    <input name="phone" required>
-  </label>
-</div>
-
-<div class="row">
-  <label>Store
-    <select name="store" id="store" required>
-      <option>Nike / SNKRS</option>
-      <option>Adidas</option>
-      <option>Puma</option>
-      <option>Foot Locker</option>
-      <option>Finish Line</option>
-      <option>Amazon (Sold by Amazon)</option>
-    </select>
-  </label>
-  <label>Shoe Size (US)
-    <input name="size" required>
-  </label>
-</div>
-
-<label>Product Link
-  <input name="product_link" id="productLink" required>
-</label>
-
-<div class="row">
-  <label>Product Price (USD)
-    <input type="number" name="usd_price" id="usdPrice" required>
-  </label>
-  <label>USD → BDT Rate
-    <input type="number" name="fx_rate" id="fxRate" value="125">
-  </label>
-</div>
-
-<label>Notes (optional)
-  <textarea name="notes"></textarea>
-</label>
-
-<div class="calc">
-  <div>Total Estimated Cost: <b id="totalBDT" class="mono">৳0</b></div>
-  <div>50% Advance Required: <b id="advanceBDT" class="mono">৳0</b></div>
-  <div style="margin-top:6px;font-size:13px;color:#9aa4d6">
-    Delivery cycle ~25 days • Shoes only • Service fee ৳2500 included
+      <div class="navcta">
+        <div class="pill"><strong>50%</strong> advance • <strong>~25 days</strong> cycle</div>
+        <a class="btnTop" href="#estimate">Submit Product</a>
+      </div>
+    </div>
   </div>
-</div>
 
-<button type="submit" class="btn">Submit Order (Netlify)</button>
-</form>
+  <div class="wrap">
 
-<button class="btn secondary" onclick="sendWhatsApp()">Send Order via WhatsApp</button>
+    <!-- HERO + SUMMARY -->
+    <section class="grid" style="margin-top:18px">
+      <div class="card">
+        <div class="pad">
+          <h1 class="heroTitle">
+            Import authentic <span style="color:var(--acc1)">sports shoes</span> from US stores — delivered to Bangladesh.
+          </h1>
+          <p>
+            You pick the product. Send the link. We purchase from approved retailers and ship in a batch cycle.
+            Simple, transparent, and authenticity-first.
+          </p>
 
-</div>
+          <div class="heroBadges">
+            <span class="badge"><span class="dot"></span> Authentic purchase (invoice/proof)</span>
+            <span class="badge"><span class="dot blue"></span> Instant estimate + 50% advance</span>
+            <span class="badge"><span class="dot warn"></span> Batch delivery ~25 days</span>
+          </div>
 
-<footer>
-© 2025 Sports Solutions Inc. • Authentic US Purchase • No Replicas
-</footer>
+          <div class="storeBadges" aria-label="approved stores">
+            <span class="store">Nike / SNKRS</span>
+            <span class="store">Adidas</span>
+            <span class="store">Puma</span>
+            <span class="store">Foot Locker</span>
+            <span class="store">Finish Line</span>
+            <span class="store">Amazon (Sold by Amazon)</span>
+          </div>
 
-</div>
+          <div class="heroCTA">
+            <a class="primaryBtn" href="#estimate">Get Estimate & Submit</a>
+            <a class="secondaryBtn" href="#terms">Read Terms</a>
+          </div>
+
+          <div id="how" style="margin-top:16px">
+            <h3 class="sectionTitle">How it works</h3>
+            <div class="kvs" style="border:1px solid rgba(255,255,255,.10); padding:12px; border-radius:14px; background:rgba(255,255,255,.03)">
+              <div><b>1) Submit</b></div><div>Link + size + price</div>
+              <div><b>2) Confirm</b></div><div>Pay 50% advance</div>
+              <div><b>3) We buy</b></div><div>From approved store</div>
+              <div><b>4) Deliver</b></div><div>~25-day batch cycle</div>
+            </div>
+            <p class="hint" style="margin-top:10px">
+              Tip: For limited editions, submit early — items can sell out fast.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- QUICK FACTS -->
+      <aside class="card">
+        <div class="pad">
+          <h3 class="sectionTitle">Quick facts</h3>
+          <div class="calc">
+            <div class="kvs">
+              <div>Service fee</div><div><b class="mono">৳2,500</b></div>
+              <div>Advance required</div><div><b class="mono">50%</b></div>
+              <div>Delivery cycle</div><div><b class="mono">~25 days</b></div>
+              <div>Category</div><div><b class="mono">Shoes only</b></div>
+              <div>Stores</div><div><b class="mono">Approved only</b></div>
+            </div>
+          </div>
+
+          <details style="margin-top:12px">
+            <summary>What we verify before purchase</summary>
+            <ul>
+              <li>Correct size/variant</li>
+              <li>Store is approved</li>
+              <li>Availability at checkout (best effort)</li>
+              <li>Estimate vs final checkout total (tax/shipping may apply)</li>
+            </ul>
+          </details>
+
+          <details style="margin-top:10px">
+            <summary>Best practice for customers</summary>
+            <ul>
+              <li>Use official store links</li>
+              <li>Double-check size chart</li>
+              <li>Send clear notes if you have screenshots</li>
+            </ul>
+          </details>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ESTIMATE + FORM -->
+    <section id="estimate" class="grid" style="margin-top:16px">
+      <div class="card">
+        <div class="pad">
+          <h3 class="sectionTitle">Get estimate & submit your product</h3>
+          <p class="hint" style="margin-top:-4px">
+            Fill the form — you’ll see an instant total estimate and the required advance.
+            Then submit via Netlify (stored in dashboard) or send via WhatsApp for faster confirmation.
+          </p>
+
+          <form
+            name="order"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            action="/success.html"
+            id="orderForm"
+          >
+            <input type="hidden" name="form-name" value="order">
+            <input type="hidden" name="bot-field">
+
+            <div class="row">
+              <label>Full Name
+                <input name="name" id="name" required placeholder="Your full name">
+              </label>
+              <label>Phone / WhatsApp
+                <input name="phone" id="phone" required placeholder="+8801XXXXXXXXX">
+              </label>
+            </div>
+
+            <div class="row">
+              <label>Approved Store
+                <select name="store" id="store" required>
+                  <option value="Nike / SNKRS">Nike / SNKRS</option>
+                  <option value="Adidas">Adidas</option>
+                  <option value="Puma">Puma</option>
+                  <option value="Under Armour">Under Armour</option>
+                  <option value="New Balance">New Balance</option>
+                  <option value="Foot Locker">Foot Locker</option>
+                  <option value="Finish Line">Finish Line</option>
+                  <option value="Amazon (Sold by Amazon)">Amazon (Sold by Amazon)</option>
+                </select>
+              </label>
+
+              <label>Shoe Size (US)
+                <input name="size" id="size" required placeholder="e.g., 9 / 10.5 / 11">
+              </label>
+            </div>
+
+            <label>Product Link (URL)
+              <input name="product_link" id="productLink" required placeholder="Paste the product link here">
+            </label>
+            <div class="hint">If you only have a screenshot, mention it in Notes.</div>
+
+            <div class="row">
+              <label>Product Price (USD)
+                <input type="number" name="usd_price" id="usdPrice" required min="1" step="0.01" placeholder="e.g., 120">
+              </label>
+              <label>USD → BDT Rate (editable)
+                <input type="number" name="fx_rate" id="fxRate" value="125" min="1" step="0.01">
+              </label>
+            </div>
+
+            <label>Notes (optional)
+              <textarea name="notes" id="notes" placeholder="Example: Screenshot available. Need this colorway. Any special instructions…"></textarea>
+            </label>
+
+            <div class="calc" aria-live="polite">
+              <div class="kvs">
+                <div>Estimated product cost</div><div><b id="productBDT" class="mono">৳0</b></div>
+                <div>Service fee (included)</div><div><b class="mono">৳2,500</b></div>
+                <div>Estimated total</div><div><b id="totalBDT" class="mono">৳0</b></div>
+                <div>Advance due now (50%)</div><div><b id="advanceBDT" class="mono">৳0</b></div>
+                <div>Remaining on delivery</div><div><b id="remainBDT" class="mono">৳0</b></div>
+              </div>
+              <div class="hint" style="margin-top:10px">
+                Final total may vary if store adds tax or checkout fees. We confirm before purchase whenever possible.
+              </div>
+
+              <div class="btnRow">
+                <button type="submit" class="btn" id="submitBtn">Submit Order (Netlify)</button>
+                <button type="button" class="btn secondary" id="waBtn" onclick="sendWhatsApp()" disabled>
+                  Send Order via WhatsApp (Recommended)
+                </button>
+              </div>
+
+              <div class="hint" id="waHint" style="margin-top:8px">
+                Fill required fields to enable WhatsApp send.
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- CONTACT / OPS -->
+      <aside id="contact" class="card">
+        <div class="pad">
+          <h3 class="sectionTitle">Contact & Operations</h3>
+          <p>
+            After you submit, we’ll confirm availability and send payment instructions for the 50% advance.
+          </p>
+
+          <details open>
+            <summary>Delivery cycle</summary>
+            <p style="margin-top:10px">
+              Batch delivery cycle is approximately <b>25 days</b>. Delays may occur due to cargo/customs/holidays.
+            </p>
+          </details>
+
+          <details>
+            <summary>Customer proof & authenticity</summary>
+            <ul>
+              <li>We purchase from approved stores only</li>
+              <li>Invoice/proof can be shared on request</li>
+              <li>No replicas — authenticity first</li>
+            </ul>
+          </details>
+
+          <details>
+            <summary>Next expansion</summary>
+            <p style="margin-top:10px">
+              Accessories and apparel can be added later with category-wise pricing (shin guards, socks, gloves, jerseys, jackets, bags).
+            </p>
+          </details>
+        </div>
+      </aside>
+    </section>
+
+    <!-- TERMS -->
+    <section id="terms" style="margin-top:16px">
+      <div class="card">
+        <div class="pad">
+          <h3 class="sectionTitle">Terms & Conditions (key points)</h3>
+          <p class="hint" style="margin-top:-4px">
+            Clear terms = smooth business. Customers agree to these by submitting and paying advance.
+          </p>
+
+          <details open>
+            <summary>Approved stores only</summary>
+            <ul>
+              <li>Nike/SNKRS, Adidas, Puma, Foot Locker, Finish Line</li>
+              <li>Amazon items must be <b>Sold by Amazon</b> (no third-party sellers)</li>
+            </ul>
+          </details>
+
+          <details>
+            <summary>Advance / cancellation</summary>
+            <ul>
+              <li><b>50% advance required</b> to confirm the order</li>
+              <li><b>No cancellation after purchase</b> (advance becomes non-refundable once we buy)</li>
+              <li>Limited/special items may require higher advance (60–70%) if needed to secure purchase</li>
+            </ul>
+          </details>
+
+          <details>
+            <summary>Size responsibility & item correctness</summary>
+            <ul>
+              <li>Customer is responsible for size/variant selection</li>
+              <li>If customer provided wrong info, customer bears the outcome</li>
+              <li>If we purchase the wrong item due to our mistake, we correct it</li>
+            </ul>
+          </details>
+
+          <details>
+            <summary>Delivery timeline & box condition</summary>
+            <ul>
+              <li>Delivery is estimated at <b>~25 days</b> from batch ship date</li>
+              <li>Delays can occur due to airline/cargo/customs/holidays</li>
+              <li>Shoe box may have dents/creases from cargo handling — authenticity is the priority</li>
+            </ul>
+          </details>
+
+          <details>
+            <summary>Currency & pricing</summary>
+            <ul>
+              <li>USD→BDT rate is locked at the time of payment for billing</li>
+              <li>Final total may vary slightly due to store tax/checkout fees</li>
+            </ul>
+          </details>
+
+          <p class="hint" style="margin-top:12px">
+            If you want, we can add a “Download Terms” PDF later — but this setup already protects you.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © 2025 Sports Solutions Inc. • Authentic US Purchase • Batch Delivery ~25 days<br>
+      Built on Netlify + GitHub • Orders captured via Netlify Forms
+    </footer>
+  </div>
 
 <script>
-const SERVICE_FEE = 2500;
-const WA_NUMBER = "14438620065";
+  const SERVICE_FEE = 2500;
+  const WA_NUMBER = "14438620065";
 
-function formatBDT(n){
-  return "৳" + Math.round(n).toLocaleString();
-}
+  const el = (id) => document.getElementById(id);
 
-function calculate(){
-  const usd = Number(document.getElementById("usdPrice").value || 0);
-  const fx = Number(document.getElementById("fxRate").value || 125);
-  const total = usd * fx + SERVICE_FEE;
-  document.getElementById("totalBDT").textContent = formatBDT(total);
-  document.getElementById("advanceBDT").textContent = formatBDT(total * 0.5);
-}
+  function formatBDT(n){
+    return "৳" + Math.round(n).toLocaleString();
+  }
 
-document.getElementById("usdPrice").addEventListener("input", calculate);
-document.getElementById("fxRate").addEventListener("input", calculate);
+  function getNumbers(){
+    const usd = Number(el("usdPrice").value || 0);
+    const fx  = Number(el("fxRate").value || 125);
+    const product = usd * fx;
+    const total = product + SERVICE_FEE;
+    const adv = total * 0.5;
+    const remain = total - adv;
+    return { usd, fx, product, total, adv, remain };
+  }
 
-function sendWhatsApp(){
-  const name = document.querySelector('[name="name"]').value;
-  const phone = document.querySelector('[name="phone"]').value;
-  const store = document.getElementById("store").value;
-  const link = document.getElementById("productLink").value;
-  const usd = document.getElementById("usdPrice").value;
-  const fx = document.getElementById("fxRate").value;
-  const total = usd * fx + SERVICE_FEE;
+  function calculate(){
+    const { product, total, adv, remain } = getNumbers();
+    el("productBDT").textContent = formatBDT(product);
+    el("totalBDT").textContent = formatBDT(total);
+    el("advanceBDT").textContent = formatBDT(adv);
+    el("remainBDT").textContent = formatBDT(remain);
+    toggleWA();
+  }
 
-  const message =
-`Sports Solutions Inc. Order
+  function requiredFilled(){
+    const ids = ["name","phone","size","productLink","usdPrice","fxRate"];
+    return ids.every(id => String(el(id).value || "").trim().length > 0);
+  }
+
+  function toggleWA(){
+    const ok = requiredFilled();
+    const waBtn = el("waBtn");
+    waBtn.disabled = !ok;
+    el("waHint").textContent = ok
+      ? "WhatsApp message will include your full order summary."
+      : "Fill required fields to enable WhatsApp send.";
+  }
+
+  function sendWhatsApp(){
+    // Guard
+    if(!requiredFilled()){
+      alert("Please fill all required fields (name, phone, size, link, USD price, FX rate) before sending via WhatsApp.");
+      return;
+    }
+
+    const name  = el("name").value.trim();
+    const phone = el("phone").value.trim();
+    const store = el("store").value;
+    const size  = el("size").value.trim();
+    const link  = el("productLink").value.trim();
+    const notes = el("notes").value.trim();
+
+    const { usd, fx, total, adv } = getNumbers();
+
+    if(!usd || usd <= 0){
+      alert("Please enter a valid USD price.");
+      return;
+    }
+
+    const message =
+`Sports Solutions Inc. — Order Summary
 
 Name: ${name}
 Phone: ${phone}
 Store: ${store}
+Size (US): ${size}
 Product Link: ${link}
-USD Price: ${usd}
+USD Price: ${usd} (Rate: ${fx})
+
 Estimated Total: ৳${Math.round(total)}
-Advance Due (50%): ৳${Math.round(total * 0.5)}
+Advance Due (50%): ৳${Math.round(adv)}
 
-Delivery cycle ~25 days`;
+Notes: ${notes || "—"}
 
-  const url = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
-  window.open(url, "_blank");
-}
+Delivery cycle: ~25 days`;
+
+    const url = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+  }
+
+  // Bind
+  ["input","change"].forEach(evt=>{
+    el("usdPrice").addEventListener(evt, calculate);
+    el("fxRate").addEventListener(evt, calculate);
+    el("name").addEventListener(evt, toggleWA);
+    el("phone").addEventListener(evt, toggleWA);
+    el("size").addEventListener(evt, toggleWA);
+    el("productLink").addEventListener(evt, toggleWA);
+    el("store").addEventListener(evt, toggleWA);
+    el("notes").addEventListener(evt, toggleWA);
+  });
+
+  // Init
+  calculate();
 </script>
-
 </body>
 </html>

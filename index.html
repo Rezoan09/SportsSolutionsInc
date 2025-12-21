@@ -289,6 +289,42 @@
     margin:36px 0 26px;
     line-height:1.6;
   }
+  /* ✅ Mobile header fix */
+@media (max-width: 700px){
+  .nav{
+    padding: 12px 14px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .brand{
+    min-width: unset;
+  }
+
+  .brand small{
+    display:none; /* keeps header compact on phone */
+  }
+
+  .navlinks{
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: nowrap;          /* keep menu in one line */
+    overflow-x: auto;           /* allow swipe */
+    -webkit-overflow-scrolling: touch;
+    gap: 8px;
+    padding-top: 8px;
+  }
+
+  .navlinks a{
+    white-space: nowrap;        /* prevent text wrapping */
+    padding: 8px 10px;
+  }
+
+  .navcta{
+    display:none; /* hide pill + button on mobile */
+  }
+}
+
 </style>
 </head>
 

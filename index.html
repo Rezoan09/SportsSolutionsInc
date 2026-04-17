@@ -1032,9 +1032,7 @@ footer a{color:var(--lime);text-decoration:underline;text-underline-offset:2px}
 </footer>
 
 <script>
-const FEE = { shoes: 2500, jersey: 1200, equip: 0 };
 const WA_NUMBER = "14438620065";
-
 const el = id => document.getElementById(id);
 
 function getCurrentCategory(){
@@ -1046,10 +1044,10 @@ function getCurrentFee(){
   const cat = getCurrentCategory();
   if(cat === 'Shoes') return 2500;
   if(cat === 'Jersey/Bottom') return 1200;
-  return 0; // equip = ask
+  return 0;
 }
 
-function formatBDT(n){ return "৳" + Math.round(n).toLocaleString('en-BD') }
+function formatBDT(n){ return "৳" + Math.round(n).toLocaleString(); }
 
 function calculate(){
   const usd = Number(el("usdPrice").value || 0);
@@ -1059,47 +1057,48 @@ function calculate(){
   const total = product + fee;
   const adv = total * 0.5;
   const remain = total - adv;
-
   el("productBDT").textContent = formatBDT(product);
   el("serviceFeeDisplay").textContent = fee === 0 ? "TBD" : formatBDT(fee);
   el("totalBDT").textContent = fee === 0 ? "TBD" : formatBDT(total);
   el("advanceBDT").textContent = fee === 0 ? "TBD" : formatBDT(adv);
   el("remainBDT").textContent = fee === 0 ? "TBD" : formatBDT(remain);
-
-  toggleWA();
 }
+
+function requiredFilled(){
+  const cat = getCurrentCategory();
+  const ids = ["name","phone","productLink","usdPrice","fxRate"];
+  if(cat === 'Shoes') ids.push("size");
+  else if(cat === 'Jersey/Bottom') ids.push("jerseySize");
+  else ids.push("equipType");
+  return ids.every(id => {
+    const e = el(id);
+    return e && String(e.value || "").trim().length > 0;
+  });
+}
+
+function toggleWA(){
+  const ok = requiredFilled();
+  el("waBtn").disabled = !ok;
+  el("waHint").textContent = ok
+    ? "✅ WhatsApp message will include your full order summary."
+    : "Fill required fields to enable WhatsApp send.";
+}
+
+function onAnyChange(){ calculate(); toggleWA(); }
 
 function onCatChange(){
   const cat = getCurrentCategory();
-  document.querySelectorAll('.field-shoes,.field-jersey,.field-equip').forEach(d=>d.classList.remove('active'));
+  document.querySelectorAll('.field-shoes,.field-jersey,.field-equip').forEach(d => d.classList.remove('active'));
   if(cat === 'Shoes') el('fieldShoes').classList.add('active');
   else if(cat === 'Jersey/Bottom') el('fieldJersey').classList.add('active');
   else el('fieldEquip').classList.add('active');
-  calculate();
+  onAnyChange();
 }
 
 function selectCategory(type){
   const map = {shoes:'catShoes', jersey:'catJersey', equip:'catEquip'};
   const radio = el(map[type]);
   if(radio){ radio.checked = true; onCatChange(); }
-}
-
-function requiredFilled(){
-  const cat = getCurrentCategory();
-  const base = [el("name"),el("phone"),el("productLink"),el("usdPrice"),el("fxRate")];
-  if(cat === 'Shoes') base.push(el("size"));
-  else if(cat === 'Jersey/Bottom') base.push(el("jerseySize"));
-  else base.push(el("equipType"));
-  return base.every(e => e && String(e.value||"").trim().length > 0);
-}
-
-function toggleWA(){
-  const ok = requiredFilled();
-  const btn = el("waBtn");
-  btn.disabled = !ok;
-  el("waHint").textContent = ok
-    ? "✅ WhatsApp message will include your full order summary."
-    : "Fill required fields to enable WhatsApp send.";
 }
 
 function sendWhatsApp(){
@@ -1111,67 +1110,50 @@ function sendWhatsApp(){
   const name = el("name").value.trim();
   const phone = el("phone").value.trim();
   const link = el("productLink").value.trim();
-  const usd = Number(el("usdPrice").value||0);
-  const fx = Number(el("fxRate").value||125);
+  const usd = Number(el("usdPrice").value || 0);
+  const fx  = Number(el("fxRate").value || 125);
   const notes = el("notes").value.trim();
   const fee = getCurrentFee();
-  const total = usd*fx + fee;
+  const total = usd * fx + fee;
   const adv = total * 0.5;
 
   let catDetails = "";
   if(cat === 'Shoes'){
     const store = el("store").value;
     const size = el("size").value.trim();
-    const variant = el("variant").value.trim();
-    catDetails = `Store: ${store}\nShoe Size (US): ${size}${variant ? '\nVariant: '+variant : ''}`;
+    const variant = (el("variant").value || "").trim();
+    catDetails = "Store: " + store + "\nShoe Size (US): " + size + (variant ? "\nVariant: " + variant : "");
   } else if(cat === 'Jersey/Bottom'){
     const store = el("jerseyStore").value;
     const size = el("jerseySize").value.trim();
-    const team = el("jerseyTeam").value.trim();
-    catDetails = `Store: ${store}\nSize: ${size}${team ? '\nTeam/Style: '+team : ''}`;
+    const team = (el("jerseyTeam").value || "").trim();
+    catDetails = "Store: " + store + "\nSize: " + size + (team ? "\nTeam/Style: " + team : "");
   } else {
     const type = el("equipType").value.trim();
-    const brand = el("equipBrand").value.trim();
-    catDetails = `Equipment Type: ${type}${brand ? '\nBrand/Store: '+brand : ''}`;
+    const brand = (el("equipBrand").value || "").trim();
+    catDetails = "Equipment Type: " + type + (brand ? "\nBrand/Store: " + brand : "");
   }
 
-  const feeStr = fee > 0 ? `Service Fee: ৳${fee.toLocaleString()}\nEstimated Total: ৳${Math.round(total).toLocaleString()}\nAdvance Due (50%): ৳${Math.round(adv).toLocaleString()}` : "Service Fee: TBD — awaiting price confirmation";
+  const feeStr = fee > 0
+    ? "Service Fee: \u09F3" + fee.toLocaleString() + "\nEstimated Total: \u09F3" + Math.round(total).toLocaleString() + "\nAdvance Due (50%): \u09F3" + Math.round(adv).toLocaleString()
+    : "Service Fee: TBD - awaiting price confirmation";
 
-  const message =
-`*Sports Solutions Inc. — Order Request*
+  const message = "*Sports Solutions Inc. - Order Request*\n\nCategory: " + cat + "\nName: " + name + "\nPhone: " + phone + "\n" + catDetails + "\n\nProduct Link: " + link + "\nUSD Price: $" + usd + " (Rate: " + fx + ")\n\n" + feeStr + "\n\nNotes: " + (notes || "-") + "\n\nDelivery cycle: ~25 days";
 
-Category: ${cat}
-Name: ${name}
-Phone: ${phone}
-${catDetails}
-
-Product Link: ${link}
-USD Price: $${usd} (Rate: ${fx})
-
-${feeStr}
-
-Notes: ${notes || "—"}
-
-Delivery cycle: ~25 days`;
-
-  const url = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
+  const url = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(message);
   window.open(url, "_blank");
 
-  // Show success overlay with summary
-  const fee = getCurrentFee();
-  const total = usd*fx + fee;
-  const adv = total * 0.5;
+  // Success overlay
   const summaryLines = [
-    `<b style="color:var(--text)">Category:</b> ${cat}`,
-    `<b style="color:var(--text)">Name:</b> ${name}`,
-    `<b style="color:var(--text)">Phone:</b> ${phone}`,
-    catDetails.split('\n').map(l => `<b style="color:var(--text)">${l.split(': ')[0]}:</b> ${l.split(': ').slice(1).join(': ')}`).join('<br>'),
-    `<b style="color:var(--text)">USD Price:</b> $${usd} @ ${fx} rate`,
+    "<b style=\"color:var(--text)\">Category:</b> " + cat,
+    "<b style=\"color:var(--text)\">Name:</b> " + name,
+    "<b style=\"color:var(--text)\">Phone:</b> " + phone,
+    "<b style=\"color:var(--text)\">USD Price:</b> $" + usd + " @ " + fx + " rate",
     fee > 0
-      ? `<b style="color:var(--text)">Estimated Total:</b> <span style="color:var(--lime)">৳${Math.round(total).toLocaleString()}</span> &nbsp;·&nbsp; <b style="color:var(--text)">Advance:</b> <span style="color:var(--cyan)">৳${Math.round(adv).toLocaleString()}</span>`
-      : `<b style="color:var(--text)">Service Fee:</b> <span style="color:var(--orange)">TBD — we'll confirm</span>`,
+      ? "<b style=\"color:var(--text)\">Estimated Total:</b> <span style=\"color:var(--lime)\">\u09F3" + Math.round(total).toLocaleString() + "</span> &nbsp;&middot;&nbsp; <b style=\"color:var(--text)\">Advance:</b> <span style=\"color:var(--cyan)\">\u09F3" + Math.round(adv).toLocaleString() + "</span>"
+      : "<b style=\"color:var(--text)\">Service Fee:</b> <span style=\"color:var(--orange)\">TBD - we will confirm</span>"
   ];
-  el("successSummary").innerHTML = summaryLines.join('<br>');
+  el("successSummary").innerHTML = summaryLines.join("<br>");
   el("successOverlay").style.display = "block";
   document.body.style.overflow = "hidden";
 }
@@ -1181,17 +1163,19 @@ function closeSuccess(){
   document.body.style.overflow = "";
 }
 
-// Bind events — all fields trigger both calculate + toggleWA
-function onAnyChange(){ calculate(); toggleWA(); }
-
-["input","change"].forEach(evt => {
-  ["usdPrice","fxRate","name","phone","productLink","size","jerseySize","equipType","store","jerseyStore","variant","jerseyTeam","equipBrand","notes"].forEach(id => {
-    const elem = el(id);
+// Bind all field events
+["input","change"].forEach(function(evt){
+  ["usdPrice","fxRate","name","phone","productLink","size","jerseySize","equipType","store","jerseyStore","variant","jerseyTeam","equipBrand","notes"].forEach(function(id){
+    var elem = el(id);
     if(elem) elem.addEventListener(evt, onAnyChange);
+  });
+  // category radios
+  document.querySelectorAll('input[name="category"]').forEach(function(r){
+    r.addEventListener(evt, onCatChange);
   });
 });
 
-// Init
+// Init on load
 calculate();
 toggleWA();
 </script>

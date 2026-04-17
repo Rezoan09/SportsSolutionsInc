@@ -3,489 +3,861 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-
 <title>Sports Solutions Inc. — US to BD Sports Imports</title>
-<meta name="description" content="Sports Solutions Inc. — Authentic US store/site purchase. Send the product link. Pay 50% advance. We handle the rest.">
+<meta name="description" content="Authentic US sports gear delivered to Bangladesh. Shoes, jerseys, equipment — we buy, you receive.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23090c10'/%3E%3Cpolygon points='32,4 52,16 52,30 32,44 12,30 12,16' fill='%23c8ff00' opacity='.15'/%3E%3Cpolygon points='32,6 50,17 50,29 32,42 14,29 14,17' fill='none' stroke='%23c8ff00' stroke-width='1.5' opacity='.4'/%3E%3Cpath d='M24,20 L32,14 L40,20 L36,26 L32,23 L28,26 Z' fill='%23c8ff00'/%3E%3Cpath d='M28,26 L32,23 L36,26 L32,50 Z' fill='%2300d4ff'/%3E%3Cpath d='M20,22 L24,20 L28,26 L24,30 Z' fill='%23c8ff00' opacity='.7'/%3E%3Cpath d='M44,22 L40,20 L36,26 L40,30 Z' fill='%2300d4ff' opacity='.7'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;0,700;0,800;1,700&family=Barlow+Condensed:wght@700;800;900&display=swap" rel="stylesheet">
 
 <style>
-  :root{
-    --bg1:#060b1a;
-    --bg2:#0b132b;
-    --card:rgba(255,255,255,.06);
-    --line:rgba(255,255,255,.12);
-    --text:#eaf0ff;
-    --mut:#aeb7e6;
-    --mut2:#9aa4d6;
-    --acc1:#6dffb3;
-    --acc2:#66b8ff;
-    --warn:#ffd36d;
-    --danger:#ff6d8b;
-    --radius:18px;
-    --radius2:14px;
-    --shadow: 0 18px 60px rgba(0,0,0,.35);
-  }
+:root{
+  --black:#090c10;
+  --dark:#0f1318;
+  --panel:#161b22;
+  --border:rgba(255,255,255,.09);
+  --text:#f0f4ff;
+  --muted:#8a93b8;
+  --lime:#c8ff00;
+  --cyan:#00d4ff;
+  --orange:#ff6b00;
+  --pink:#ff2d78;
+  --r:16px;
+  --r2:12px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Barlow',sans-serif;
+  background:var(--black);
+  color:var(--text);
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
 
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{
-    margin:0;
-    font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
-    color:var(--text);
-    background:
-      radial-gradient(900px 600px at 10% 0%, rgba(102,184,255,.18), transparent 55%),
-      radial-gradient(900px 600px at 90% 10%, rgba(109,255,179,.16), transparent 55%),
-      linear-gradient(180deg,var(--bg1),var(--bg2));
-  }
-
-  .wrap{max-width:1100px;margin:auto;padding:22px}
-  a{color:inherit;text-decoration:none}
-
-  /* Top bar */
-  .topbar{
-    position:sticky; top:0; z-index:50;
-    backdrop-filter: blur(14px);
-    background: linear-gradient(180deg, rgba(6,11,26,.82), rgba(6,11,26,.40));
-    border-bottom:1px solid rgba(255,255,255,.08);
-  }
-  .nav{
-    max-width:1100px;
-    margin:0 auto;
-    padding:14px 22px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:14px;
-  }
-  .brand{
-    display:flex; align-items:center; gap:12px;
-    min-width: 240px;
-  }
-  .mark{
-    width:42px;height:42px;border-radius:14px;
-    border:1px solid rgba(255,255,255,.14);
-    background:
-      radial-gradient(14px 14px at 30% 30%, rgba(109,255,179,.95), transparent 60%),
-      radial-gradient(18px 18px at 70% 70%, rgba(102,184,255,.95), transparent 60%),
-      linear-gradient(135deg, rgba(255,255,255,.12), rgba(255,255,255,.02));
-    box-shadow: 0 10px 30px rgba(0,0,0,.25);
-  }
-  .brand b{display:block; font-size:14.5px; letter-spacing:.2px}
-  .brand small{display:block; color:var(--mut2); font-size:12px; margin-top:2px}
-
-  .navlinks{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
-  .navlinks a{
-    font-size:13px; color:var(--mut);
-    padding:8px 10px;
-    border-radius:12px;
-    border:1px solid transparent;
-  }
-  .navlinks a:hover{
-    color:var(--text);
-    border-color: rgba(255,255,255,.12);
-    background: rgba(255,255,255,.04);
-  }
-  .navcta{
-    display:flex; align-items:center; gap:10px;
-  }
-  .pill{
-    font-size:12.5px;
-    color:rgba(234,240,255,.92);
-    border:1px solid rgba(255,255,255,.14);
-    background:rgba(255,255,255,.06);
-    padding:8px 10px;
-    border-radius:999px;
-  }
-  .pill strong{color:var(--acc1)}
-  .btnTop{
-    display:inline-flex; align-items:center; justify-content:center;
-    padding:9px 12px;
-    border-radius:14px;
-    font-size:13px;
-    font-weight:700;
-    border:1px solid rgba(255,255,255,.18);
-    background: linear-gradient(135deg, rgba(109,255,179,.22), rgba(102,184,255,.18));
-    box-shadow: 0 14px 34px rgba(0,0,0,.22);
-    cursor:pointer;
-  }
-  .btnTop:hover{transform: translateY(-1px)}
-  @media (max-width: 860px){
-    .navcta{display:none}
-  }
-
-  /* Cards + layout */
-  .card{
-    background: var(--card);
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    box-shadow: var(--shadow);
-    overflow:hidden;
-  }
-  .pad{padding:22px}
-  h1,h2,h3{margin:0 0 10px}
-  p{margin:0 0 10px; color:var(--mut); line-height:1.6}
-
-  .grid{
-    display:grid;
-    grid-template-columns: 1.15fr .85fr;
-    gap:16px;
-    margin-top:18px;
-  }
-  @media (max-width: 900px){
-    .grid{grid-template-columns:1fr}
-  }
-
-  /* Hero */
-  .heroTitle{
-    font-size:38px;
-    line-height:1.06;
-    letter-spacing:-.7px;
-    margin-bottom:10px;
-  }
-  @media (max-width: 520px){
-    .heroTitle{font-size:30px}
-  }
-
-  .heroBadges{
-    display:flex; gap:10px; flex-wrap:wrap;
-    margin-top:12px;
-  }
-  .badge{
-    display:inline-flex; align-items:center; gap:8px;
-    padding:8px 10px;
-    border-radius:999px;
-    border:1px solid rgba(255,255,255,.14);
-    background:rgba(255,255,255,.05);
-    color:rgba(234,240,255,.9);
-    font-size:12.5px;
-  }
-  .dot{width:9px;height:9px;border-radius:99px;background:var(--acc1)}
-  .dot.blue{background:var(--acc2)}
-  .dot.warn{background:var(--warn)}
-
-  .storeBadges{
-    display:flex; gap:10px; flex-wrap:wrap;
-    margin-top:14px;
-  }
-  .store{
-    font-size:12.5px;
-    color:rgba(234,240,255,.86);
-    border:1px dashed rgba(255,255,255,.16);
-    background:rgba(255,255,255,.04);
-    padding:10px 12px;
-    border-radius:14px;
-  }
-
-  .heroCTA{
-    display:flex; gap:10px; flex-wrap:wrap;
-    margin-top:14px;
-  }
-  .primaryBtn{
-    display:inline-flex; align-items:center; justify-content:center;
-    padding:11px 14px;
-    border-radius:14px;
-    font-weight:800;
-    border:1px solid rgba(255,255,255,.18);
-    background: linear-gradient(135deg, rgba(109,255,179,.30), rgba(102,184,255,.20));
-    cursor:pointer;
-  }
-  .secondaryBtn{
-    display:inline-flex; align-items:center; justify-content:center;
-    padding:11px 14px;
-    border-radius:14px;
-    font-weight:700;
-    border:1px solid rgba(255,255,255,.18);
-    background: rgba(255,255,255,.05);
-  }
-
-  /* Form */
-  label{font-size:12.5px;color:#b9c3ff}
-  input,select,textarea,button{
-    width:100%;
-    padding:12px;
-    margin-top:6px;
-    border-radius:12px;
-    border:1px solid rgba(255,255,255,.22);
-    background: rgba(0,0,0,.22);
-    color:#fff;
-    font-size:14px;
-    outline:none;
-  }
-  input::placeholder, textarea::placeholder{color: rgba(174,183,230,.65)}
-  textarea{resize:vertical; min-height:90px}
-  .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-  @media(max-width:700px){.row{grid-template-columns:1fr}}
-
-  .hint{font-size:12px;color:rgba(174,183,230,.80); margin-top:6px; line-height:1.4}
-
-  .calc{
-    background:rgba(255,255,255,.04);
-    padding:14px;
-    border-radius:12px;
-    margin-top:14px;
-    font-size:14px;
-    border:1px solid rgba(255,255,255,.10);
-  }
-  .kvs{
-    display:grid;
-    grid-template-columns: 1fr auto;
-    gap:8px 12px;
-    color:var(--mut);
-    font-size:13px;
-  }
-  .kvs b{color:var(--text)}
-  .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
-
-  .btnRow{
-    display:flex; gap:10px; flex-wrap:wrap;
-    margin-top:12px;
-  }
-  .btn{
-    flex: 1 1 180px;
-    border-radius:14px;
-    font-weight:800;
-    cursor:pointer;
-    border:1px solid rgba(255,255,255,.18);
-    background: linear-gradient(135deg, rgba(109,255,179,.90), rgba(102,184,255,.75));
-    color:#061021;
-  }
-  .btn.secondary{
-    background: rgba(255,255,255,.06);
-    color: var(--text);
-    font-weight:750;
-  }
-  .btn:disabled{
-    cursor:not-allowed;
-    opacity:.45;
-    filter:grayscale(.1);
-  }
-
-  .sectionTitle{
-    font-size:16px;
-    letter-spacing:.2px;
-    margin:0 0 10px;
-  }
-
-  /* Accordion terms */
-  details{
-    border:1px solid rgba(255,255,255,.12);
-    background:rgba(255,255,255,.04);
-    border-radius:14px;
-    padding:12px 12px;
-    margin-top:10px;
-  }
-  summary{
-    cursor:pointer;
-    font-weight:800;
-    color: rgba(234,240,255,.92);
-  }
-  details p, details li{color:rgba(174,183,230,.92)}
-  ul{margin:10px 0 0 18px}
-  li{margin:7px 0}
-
-  footer{
-    text-align:center;
-    color:#9aa4d6;
-    font-size:13px;
-    margin:36px 0 26px;
-    line-height:1.6;
-  }
-  /* ✅ Mobile header fix */
-@media (max-width: 700px){
-  .nav{
-    padding: 12px 14px;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-
-  .brand{
-    min-width: unset;
-  }
-
-  .brand small{
-    display:none; /* keeps header compact on phone */
-  }
-
-  .navlinks{
-    width: 100%;
-    justify-content: flex-start;
-    flex-wrap: nowrap;          /* keep menu in one line */
-    overflow-x: auto;           /* allow swipe */
-    -webkit-overflow-scrolling: touch;
-    gap: 8px;
-    padding-top: 8px;
-  }
-
-  .navlinks a{
-    white-space: nowrap;        /* prevent text wrapping */
-    padding: 8px 10px;
-  }
-
-  .navcta{
-    display:none; /* hide pill + button on mobile */
-  }
+/* ─── ANIMATED BG ─── */
+body::before{
+  content:'';
+  position:fixed;inset:0;
+  background:
+    radial-gradient(ellipse 800px 500px at 5% 0%, rgba(200,255,0,.07) 0%, transparent 60%),
+    radial-gradient(ellipse 600px 400px at 95% 5%, rgba(0,212,255,.08) 0%, transparent 60%),
+    radial-gradient(ellipse 500px 400px at 50% 100%, rgba(255,107,0,.06) 0%, transparent 60%);
+  pointer-events:none;
+  z-index:0;
 }
 
+/* ─── SPORTS BANNER ─── */
+.sports-banner{
+  position:relative;z-index:1;
+  width:100%;overflow:hidden;
+  height:220px;
+  background:
+    linear-gradient(90deg, rgba(9,12,16,.85) 0%, rgba(9,12,16,.4) 40%, rgba(9,12,16,.4) 60%, rgba(9,12,16,.85) 100%),
+    linear-gradient(180deg, rgba(9,12,16,.3) 0%, rgba(9,12,16,.7) 100%),
+    #0f1318;
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+}
+.banner-icons{
+  display:flex;align-items:center;gap:0;
+  position:absolute;inset:0;
+  justify-content:center;
+  overflow:hidden;
+}
+.banner-sport{
+  font-size:90px;
+  opacity:.12;
+  filter:grayscale(1);
+  transform:rotate(-8deg);
+  transition:opacity .3s;
+  flex-shrink:0;
+  line-height:1;
+  padding:0 8px;
+}
+.banner-sport:nth-child(even){transform:rotate(6deg) translateY(10px)}
+.banner-sport:nth-child(3){opacity:.18;filter:none;transform:rotate(-4deg) scale(1.1)}
+.banner-sport:nth-child(5){opacity:.15;filter:none;transform:rotate(5deg)}
+.banner-content{
+  position:relative;z-index:2;
+  text-align:center;
+  padding:0 20px;
+}
+.banner-content .bc-tag{
+  display:inline-flex;align-items:center;gap:7px;
+  font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+  color:var(--lime);margin-bottom:10px;
+}
+.banner-content h2{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(32px,5vw,54px);
+  letter-spacing:2px;line-height:1;
+  background:linear-gradient(90deg,var(--lime),var(--cyan),var(--orange));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  margin-bottom:8px;
+}
+.banner-content p{
+  font-size:14px;color:rgba(240,244,255,.65);font-weight:600;letter-spacing:.5px;
+}
+.banner-divider{
+  height:2px;width:60px;margin:10px auto 0;
+  background:linear-gradient(90deg,var(--lime),var(--cyan));
+  border-radius:2px;
+}
+
+/* ─── SVG LOGO ─── */
+.logo-svg{width:40px;height:40px;flex-shrink:0}
+
+
+.topbar{
+  position:sticky;top:0;z-index:100;
+  background:rgba(9,12,16,.88);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+}
+.nav{
+  max-width:1140px;margin:0 auto;
+  padding:0 22px;
+  display:flex;align-items:center;justify-content:space-between;
+  height:62px;gap:16px;
+}
+.brand{display:flex;align-items:center;gap:12px}
+.logo-mark{
+  width:40px;height:40px;border-radius:10px;
+  background:linear-gradient(135deg,var(--lime),var(--cyan));
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:22px;color:#090c10;letter-spacing:.5px;
+  flex-shrink:0;
+}
+.brand-name{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:16px;letter-spacing:.8px;line-height:1.1}
+.brand-name small{display:block;font-size:11px;font-weight:600;color:var(--lime);letter-spacing:2px;text-transform:uppercase}
+.navlinks{display:flex;gap:2px}
+.navlinks a{
+  padding:8px 12px;border-radius:8px;font-size:13px;font-weight:600;
+  color:var(--muted);transition:all .15s;letter-spacing:.3px;
+}
+.navlinks a:hover{color:var(--text);background:rgba(255,255,255,.06)}
+.nav-cta{
+  display:flex;align-items:center;gap:8px;flex-shrink:0;
+}
+.pill-badge{
+  font-size:12px;font-weight:700;padding:7px 12px;
+  border-radius:999px;border:1px solid rgba(200,255,0,.3);
+  background:rgba(200,255,0,.06);color:var(--lime);
+  letter-spacing:.5px;
+}
+.btn-top{
+  padding:9px 16px;border-radius:10px;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:14px;font-weight:800;letter-spacing:1px;text-transform:uppercase;
+  background:linear-gradient(135deg,var(--lime),var(--cyan));
+  color:#090c10;border:none;cursor:pointer;
+  transition:transform .15s,box-shadow .15s;
+}
+.btn-top:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(200,255,0,.3)}
+@media(max-width:860px){.nav-cta{display:none}}
+@media(max-width:700px){
+  .navlinks{overflow-x:auto;-webkit-overflow-scrolling:touch;gap:0}
+  .navlinks a{white-space:nowrap;font-size:12px;padding:7px 10px}
+  .brand-name small{display:none}
+}
+
+/* ─── HERO ─── */
+.hero{
+  position:relative;z-index:1;
+  max-width:1140px;margin:0 auto;padding:48px 22px 0;
+}
+.hero-grid{
+  display:grid;grid-template-columns:1fr 380px;gap:20px;
+  align-items:start;
+}
+@media(max-width:960px){.hero-grid{grid-template-columns:1fr}}
+
+.hero-main{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:var(--r);
+  overflow:hidden;
+  position:relative;
+}
+.hero-stripe{
+  height:5px;
+  background:linear-gradient(90deg,var(--lime),var(--cyan),var(--orange),var(--pink));
+}
+.hero-body{padding:32px 28px 28px}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  color:var(--lime);margin-bottom:18px;
+}
+.eyebrow span{
+  width:28px;height:2px;background:var(--lime);border-radius:2px;
+}
+.hero-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(44px,7vw,76px);
+  line-height:.96;letter-spacing:1px;
+  margin-bottom:16px;
+}
+.hero-title .hl-lime{color:var(--lime)}
+.hero-title .hl-cyan{color:var(--cyan)}
+.hero-title .hl-orange{color:var(--orange)}
+.hero-desc{font-size:16px;color:var(--muted);line-height:1.65;max-width:520px;margin-bottom:24px}
+
+.hero-badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.hbadge{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:7px 12px;border-radius:999px;
+  font-size:12.5px;font-weight:600;
+  border:1px solid rgba(255,255,255,.1);
+  background:rgba(255,255,255,.04);
+}
+.dot{width:8px;height:8px;border-radius:50%}
+.dot-lime{background:var(--lime);box-shadow:0 0 8px var(--lime)}
+.dot-cyan{background:var(--cyan);box-shadow:0 0 8px var(--cyan)}
+.dot-orange{background:var(--orange);box-shadow:0 0 8px var(--orange)}
+
+.stores-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.stores{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.store-tag{
+  font-size:12px;font-weight:600;padding:6px 11px;border-radius:8px;
+  border:1px dashed rgba(255,255,255,.15);background:rgba(255,255,255,.03);
+  color:rgba(240,244,255,.75);
+}
+
+.hero-cta{display:flex;gap:10px;flex-wrap:wrap}
+.cta-primary{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:13px 22px;border-radius:12px;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:15px;font-weight:800;letter-spacing:1px;text-transform:uppercase;
+  background:linear-gradient(135deg,var(--lime),#a8e800);
+  color:#090c10;transition:transform .15s,box-shadow .15s;
+}
+.cta-primary:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(200,255,0,.35)}
+.cta-secondary{
+  display:inline-flex;align-items:center;
+  padding:13px 18px;border-radius:12px;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:15px;font-weight:800;letter-spacing:1px;text-transform:uppercase;
+  border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.05);
+  transition:all .15s;
+}
+.cta-secondary:hover{background:rgba(255,255,255,.09)}
+
+/* ─── HOW IT WORKS inside hero ─── */
+.how-box{
+  margin-top:28px;
+  border-top:1px solid var(--border);
+  padding-top:20px;
+}
+.how-title{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media(max-width:560px){.steps{grid-template-columns:1fr 1fr}}
+.step{
+  background:rgba(255,255,255,.03);border:1px solid var(--border);
+  border-radius:var(--r2);padding:12px;
+}
+.step-num{
+  font-family:'Bebas Neue',sans-serif;font-size:26px;
+  line-height:1;margin-bottom:4px;
+}
+.step:nth-child(1) .step-num{color:var(--lime)}
+.step:nth-child(2) .step-num{color:var(--cyan)}
+.step:nth-child(3) .step-num{color:var(--orange)}
+.step:nth-child(4) .step-num{color:var(--pink)}
+.step-label{font-size:12px;font-weight:700;color:var(--text);margin-bottom:3px}
+.step-desc{font-size:11px;color:var(--muted);line-height:1.4}
+
+/* ─── QUICK FACTS PANEL ─── */
+.facts-panel{
+  background:var(--panel);border:1px solid var(--border);
+  border-radius:var(--r);overflow:hidden;position:sticky;top:80px;
+}
+.facts-header{
+  padding:16px 18px;
+  border-bottom:1px solid var(--border);
+  background:rgba(255,255,255,.02);
+}
+.facts-header h3{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:16px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;
+}
+.facts-body{padding:16px 18px}
+.fact-row{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:9px 0;border-bottom:1px solid rgba(255,255,255,.06);
+  font-size:13px;
+}
+.fact-row:last-child{border-bottom:none}
+.fact-label{color:var(--muted);font-weight:600}
+.fact-val{font-weight:800;font-family:'Barlow Condensed',sans-serif;font-size:15px;letter-spacing:.5px}
+.fact-val.lime{color:var(--lime)}
+.fact-val.cyan{color:var(--cyan)}
+.fact-val.orange{color:var(--orange)}
+
+/* ─── CATEGORY SECTION ─── */
+.section{
+  max-width:1140px;margin:0 auto;padding:0 22px;
+  position:relative;z-index:1;
+}
+.section-gap{margin-top:20px}
+
+.section-head{
+  display:flex;align-items:center;gap:14px;
+  margin-bottom:16px;
+}
+.section-head h2{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:32px;letter-spacing:.5px;
+}
+.section-head .divider{flex:1;height:1px;background:var(--border)}
+
+.cats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:760px){.cats-grid{grid-template-columns:1fr}}
+
+.cat-card{
+  border-radius:var(--r);overflow:hidden;
+  border:1px solid var(--border);
+  transition:transform .2s,box-shadow .2s;
+  cursor:pointer;
+  position:relative;
+}
+.cat-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.5)}
+.cat-bg{
+  height:160px;display:flex;align-items:center;justify-content:center;
+  font-size:72px;position:relative;overflow:hidden;
+}
+.cat-card:nth-child(1) .cat-bg{background:linear-gradient(135deg,#0a1a08,#1a3010);border-bottom:1px solid rgba(200,255,0,.15)}
+.cat-card:nth-child(2) .cat-bg{background:linear-gradient(135deg,#0a1020,#101e38);border-bottom:1px solid rgba(0,212,255,.15)}
+.cat-card:nth-child(3) .cat-bg{background:linear-gradient(135deg,#1a0e06,#2a1a0a);border-bottom:1px solid rgba(255,107,0,.15)}
+.cat-glow{
+  position:absolute;inset:0;
+  opacity:.35;
+}
+.cat-card:nth-child(1) .cat-glow{background:radial-gradient(circle at 50% 60%,rgba(200,255,0,.2),transparent 70%)}
+.cat-card:nth-child(2) .cat-glow{background:radial-gradient(circle at 50% 60%,rgba(0,212,255,.2),transparent 70%)}
+.cat-card:nth-child(3) .cat-glow{background:radial-gradient(circle at 50% 60%,rgba(255,107,0,.2),transparent 70%)}
+.cat-emoji{position:relative;z-index:1;filter:drop-shadow(0 8px 16px rgba(0,0,0,.5))}
+.cat-info{padding:16px 18px;background:var(--panel)}
+.cat-name{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:20px;font-weight:900;letter-spacing:.8px;
+  text-transform:uppercase;margin-bottom:4px;
+}
+.cat-card:nth-child(1) .cat-name{color:var(--lime)}
+.cat-card:nth-child(2) .cat-name{color:var(--cyan)}
+.cat-card:nth-child(3) .cat-name{color:var(--orange)}
+.cat-desc{font-size:12.5px;color:var(--muted);margin-bottom:10px;line-height:1.4}
+.cat-price{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:6px 12px;border-radius:999px;
+  font-size:13px;font-weight:800;
+  font-family:'Barlow Condensed',sans-serif;letter-spacing:.5px;
+}
+.cat-card:nth-child(1) .cat-price{background:rgba(200,255,0,.1);border:1px solid rgba(200,255,0,.25);color:var(--lime)}
+.cat-card:nth-child(2) .cat-price{background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.25);color:var(--cyan)}
+.cat-card:nth-child(3) .cat-price{background:rgba(255,107,0,.1);border:1px solid rgba(255,107,0,.25);color:var(--orange)}
+.cat-badge{
+  position:absolute;top:12px;right:12px;
+  font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;
+  padding:4px 8px;border-radius:6px;background:rgba(9,12,16,.8);
+  border:1px solid var(--border);color:var(--muted);
+}
+
+/* ─── ORDER FORM ─── */
+.form-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:20px;align-items:start}
+@media(max-width:960px){.form-grid{grid-template-columns:1fr}}
+
+.form-card{
+  background:var(--panel);border:1px solid var(--border);
+  border-radius:var(--r);overflow:hidden;
+}
+.form-card-header{
+  padding:18px 22px;border-bottom:1px solid var(--border);
+  background:rgba(255,255,255,.02);
+  display:flex;align-items:center;justify-content:space-between;
+}
+.form-card-header h3{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:18px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;
+}
+.form-card-body{padding:22px}
+
+label{font-size:12.5px;font-weight:700;color:#9aa8d6;letter-spacing:.3px;display:block;margin-bottom:14px}
+label span{display:block;margin-top:6px}
+input,select,textarea{
+  width:100%;padding:12px 14px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(0,0,0,.3);
+  color:var(--text);font-size:14px;
+  font-family:'Barlow',sans-serif;
+  outline:none;transition:border-color .15s;
+  display:block;
+}
+input:focus,select:focus,textarea:focus{border-color:rgba(200,255,0,.4);background:rgba(0,0,0,.4)}
+input::placeholder,textarea::placeholder{color:rgba(138,147,184,.5)}
+textarea{resize:vertical;min-height:88px}
+select{cursor:pointer}
+select option{background:#1a1f2a;color:var(--text)}
+
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:640px){.form-row{grid-template-columns:1fr}}
+
+.cat-selector{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:6px}
+.cat-opt{
+  padding:10px 8px;border-radius:10px;
+  border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.03);
+  text-align:center;cursor:pointer;transition:all .15s;
+}
+.cat-opt input{display:none}
+.cat-opt-icon{font-size:22px;display:block;margin-bottom:4px}
+.cat-opt-name{font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;display:block}
+.cat-opt:has(input:checked){border-color:var(--lime);background:rgba(200,255,0,.08)}
+.cat-opt:has(input:checked) .cat-opt-name{color:var(--lime)}
+.cat-opt.cat-jersey:has(input:checked){border-color:var(--cyan);background:rgba(0,212,255,.08)}
+.cat-opt.cat-jersey:has(input:checked) .cat-opt-name{color:var(--cyan)}
+.cat-opt.cat-equip:has(input:checked){border-color:var(--orange);background:rgba(255,107,0,.08)}
+.cat-opt.cat-equip:has(input:checked) .cat-opt-name{color:var(--orange)}
+
+/* category-specific fields */
+.field-shoes,.field-jersey,.field-equip{display:none}
+.field-shoes.active,.field-jersey.active,.field-equip.active{display:block}
+
+.calc-box{
+  margin-top:18px;
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:var(--r2);overflow:hidden;
+}
+.calc-box-header{
+  padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.07);
+  font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);
+}
+.calc-rows{padding:12px 14px;display:grid;gap:8px}
+.ckvrow{
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:13px;
+}
+.ckvrow span{color:var(--muted)}
+.ckvrow b{font-family:'Barlow Condensed',sans-serif;font-size:15px;letter-spacing:.5px}
+.ckvrow.total{
+  padding-top:10px;border-top:1px dashed rgba(255,255,255,.1);
+  margin-top:2px;
+}
+.ckvrow.total b{color:var(--lime);font-size:17px}
+.ckvrow.adv b{color:var(--cyan)}
+
+.form-note{
+  font-size:12px;color:rgba(138,147,184,.75);
+  margin-top:10px;line-height:1.5;
+}
+
+.wa-btn{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;margin-top:16px;
+  padding:14px 20px;border-radius:12px;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:16px;font-weight:800;letter-spacing:1px;text-transform:uppercase;
+  background:linear-gradient(135deg,#25D366,#1aa350);
+  color:#fff;border:none;cursor:pointer;
+  transition:transform .15s,box-shadow .15s,opacity .2s;
+}
+.wa-btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 8px 28px rgba(37,211,102,.35)}
+.wa-btn:disabled{opacity:.4;cursor:not-allowed;transform:none;box-shadow:none}
+.wa-icon{font-size:20px}
+
+.wa-hint{
+  text-align:center;font-size:12px;color:var(--muted);
+  margin-top:8px;line-height:1.5;
+}
+
+/* ─── CONTACT + TERMS SIDE ─── */
+.side-stack{display:flex;flex-direction:column;gap:16px}
+
+.info-card{
+  background:var(--panel);border:1px solid var(--border);
+  border-radius:var(--r);overflow:hidden;
+}
+.info-card-header{
+  padding:14px 18px;border-bottom:1px solid var(--border);
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:15px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;
+  background:rgba(255,255,255,.02);
+  display:flex;align-items:center;gap:10px;
+}
+.info-card-body{padding:16px 18px}
+.info-card-body p{color:var(--muted);font-size:13.5px;line-height:1.6;margin-bottom:10px}
+.info-card-body p:last-child{margin-bottom:0}
+
+details{
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.02);
+  border-radius:var(--r2);padding:12px 14px;
+  margin-top:10px;
+}
+summary{
+  cursor:pointer;font-weight:700;font-size:13.5px;
+  color:rgba(240,244,255,.9);list-style:none;
+  display:flex;align-items:center;justify-content:space-between;
+}
+summary::after{content:'›';font-size:18px;color:var(--muted);transition:transform .2s}
+details[open] summary::after{transform:rotate(90deg)}
+details p,details li{color:var(--muted);font-size:13px;line-height:1.6}
+ul{margin:10px 0 0 16px}
+li{margin:7px 0}
+
+/* ─── TERMS ─── */
+.terms-section{
+  max-width:1140px;margin:20px auto 0;padding:0 22px;
+  position:relative;z-index:1;
+}
+.terms-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media(max-width:700px){.terms-grid{grid-template-columns:1fr}}
+.terms-card{
+  background:var(--panel);border:1px solid var(--border);
+  border-radius:var(--r);padding:18px;
+}
+.terms-icon{font-size:22px;margin-bottom:8px}
+.terms-title{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:15px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;
+  margin-bottom:10px;color:var(--lime);
+}
+
+/* ─── FOOTER ─── */
+footer{
+  max-width:1140px;margin:32px auto 0;padding:20px 22px 32px;
+  position:relative;z-index:1;
+  border-top:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:12px;
+  font-size:13px;color:var(--muted);
+}
+footer .left{line-height:1.6}
+footer .right{font-size:12px;color:rgba(138,147,184,.6);text-align:right}
+footer a{color:var(--lime);text-decoration:underline;text-underline-offset:2px}
+
+/* ─── UTILITY ─── */
+.mt12{margin-top:12px}
+.tag-live{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  padding:4px 9px;border-radius:999px;
+  background:rgba(200,255,0,.1);border:1px solid rgba(200,255,0,.2);color:var(--lime);
+}
+.pulse{
+  width:7px;height:7px;border-radius:50%;background:var(--lime);
+  animation:pulse 1.6s ease-in-out infinite;
+}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.7)}}
+
+/* fade in on load */
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.hero-main{animation:fadeUp .5s ease both}
+.facts-panel{animation:fadeUp .5s .1s ease both}
+.cats-grid .cat-card:nth-child(1){animation:fadeUp .5s .15s ease both}
+.cats-grid .cat-card:nth-child(2){animation:fadeUp .5s .25s ease both}
+.cats-grid .cat-card:nth-child(3){animation:fadeUp .5s .35s ease both}
 </style>
 </head>
-
 <body>
-  <div class="topbar">
-    <div class="nav">
-      <div class="brand">
-        <div class="mark" aria-hidden="true"></div>
-        <div>
-          <b>Sports Solutions Inc.</b>
-          <small>Only genuine. No replicas.</small>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="nav">
+    <div class="brand">
+      <svg class="logo-svg" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <rect width="64" height="64" rx="12" fill="#090c10"/>
+        <polygon points="32,4 52,16 52,30 32,44 12,30 12,16" fill="#c8ff00" opacity=".08"/>
+        <polygon points="32,6 50,17 50,29 32,42 14,29 14,17" fill="none" stroke="#c8ff00" stroke-width="1.2" opacity=".3"/>
+        <polygon points="32,8 48,18 40,22 32,16 24,22 16,18" fill="url(#navlg)"/>
+        <polygon points="16,18 24,22 20,32 12,26" fill="#c8ff00" opacity=".55"/>
+        <polygon points="48,18 40,22 44,32 52,26" fill="#00d4ff" opacity=".55"/>
+        <polygon points="24,22 32,16 40,22 36,28 32,25 28,28" fill="#c8ff00"/>
+        <polygon points="28,28 32,25 36,28 32,56" fill="#00d4ff"/>
+        <polygon points="20,32 28,28 24,38 16,34" fill="#c8ff00" opacity=".4"/>
+        <polygon points="44,32 36,28 40,38 48,34" fill="#00d4ff" opacity=".4"/>
+        <defs><linearGradient id="navlg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#c8ff00"/><stop offset="100%" stop-color="#00d4ff"/></linearGradient></defs>
+      </svg>
+      <div class="brand-name">
+        Sports Solutions Inc.
+        <small>US → Bangladesh</small>
+      </div>
+    </div>
+    <div class="navlinks">
+      <a href="#categories">Categories</a>
+      <a href="#order">Order</a>
+      <a href="#terms">Terms</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <div class="pill-badge"><span class="pulse" style="display:inline-block;margin-right:4px"></span>Orders Open</div>
+      <a class="btn-top" href="#order">Order Now →</a>
+    </div>
+  </div>
+</div>
+
+<!-- SPORTS BANNER -->
+<div class="sports-banner">
+  <div class="banner-icons">
+    <span class="banner-sport">⚽</span>
+    <span class="banner-sport">🏀</span>
+    <span class="banner-sport">👟</span>
+    <span class="banner-sport">🏈</span>
+    <span class="banner-sport">👕</span>
+    <span class="banner-sport">🎽</span>
+    <span class="banner-sport">🏋️</span>
+    <span class="banner-sport">🎯</span>
+    <span class="banner-sport">🏊</span>
+  </div>
+  <div class="banner-content">
+    <div class="bc-tag"><span class="pulse"></span> US → Bangladesh · Authentic Only</div>
+    <h2>GEAR UP. PLAY REAL.</h2>
+    <p>Official US stores · Shoes · Jerseys · Equipment · ~25-day delivery</p>
+    <div class="banner-divider"></div>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-grid">
+    <div class="hero-main">
+      <div class="hero-stripe"></div>
+      <div class="hero-body">
+        <div class="eyebrow"><span></span> Authentic US Sports Gear · Delivered to Bangladesh</div>
+        <h1 class="hero-title">
+          <span class="hl-lime">Real</span> Gear.<br>
+          <span class="hl-cyan">Direct</span> from US.<br>
+          <span class="hl-orange">Your</span> Door.
+        </h1>
+        <p class="hero-desc">
+          Send us the product link — we purchase from official US stores and deliver to Bangladesh in ~25 days. Shoes, jerseys, equipment. Only genuine, zero replicas.
+        </p>
+
+        <div class="hero-badges">
+          <span class="hbadge"><span class="dot dot-lime"></span> Genuine products only</span>
+          <span class="hbadge"><span class="dot dot-cyan"></span> 50% advance to confirm</span>
+          <span class="hbadge"><span class="dot dot-orange"></span> ~25-day delivery cycle</span>
+        </div>
+
+        <div class="stores-label">Approved Stores</div>
+        <div class="stores">
+          <span class="store-tag">Nike / SNKRS</span>
+          <span class="store-tag">Adidas</span>
+          <span class="store-tag">Puma</span>
+          <span class="store-tag">Under Armour</span>
+          <span class="store-tag">New Balance</span>
+          <span class="store-tag">Foot Locker</span>
+          <span class="store-tag">Pro Direct US</span>
+          <span class="store-tag">Finish Line</span>
+          <span class="store-tag">Amazon (Sold by Amazon)</span>
+          <span class="store-tag">Other Brand</span>
+        </div>
+
+        <div class="hero-cta">
+          <a class="cta-primary" href="#order">Get Estimate & Order ↗</a>
+          <a class="cta-secondary" href="#terms">Read Terms</a>
+        </div>
+
+        <div class="how-box">
+          <div class="how-title">How it works</div>
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">01</div>
+              <div class="step-label">Submit</div>
+              <div class="step-desc">Link + size via WhatsApp form</div>
+            </div>
+            <div class="step">
+              <div class="step-num">02</div>
+              <div class="step-label">Confirm</div>
+              <div class="step-desc">Pay 50% advance</div>
+            </div>
+            <div class="step">
+              <div class="step-num">03</div>
+              <div class="step-label">We Buy</div>
+              <div class="step-desc">From approved US store</div>
+            </div>
+            <div class="step">
+              <div class="step-num">04</div>
+              <div class="step-label">Receive</div>
+              <div class="step-desc">~25-day batch delivery</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FACTS PANEL -->
+    <div class="facts-panel" id="contact">
+      <div class="facts-header">
+        <h3>⚡ Quick Facts</h3>
+      </div>
+      <div class="facts-body">
+        <div class="fact-row">
+          <span class="fact-label">Shoes (any pair)</span>
+          <span class="fact-val lime">৳2,500</span>
+        </div>
+        <div class="fact-row">
+          <span class="fact-label">Jersey / Bottom</span>
+          <span class="fact-val cyan">৳1,200</span>
+        </div>
+        <div class="fact-row">
+          <span class="fact-label">Sports Equipment</span>
+          <span class="fact-val orange">Ask for price</span>
+        </div>
+        <div class="fact-row">
+          <span class="fact-label">Advance Required</span>
+          <span class="fact-val lime">50%</span>
+        </div>
+        <div class="fact-row">
+          <span class="fact-label">Delivery Cycle</span>
+          <span class="fact-val cyan">~25 days</span>
+        </div>
+        <div class="fact-row">
+          <span class="fact-label">Authenticity</span>
+          <span class="fact-val lime">100% Genuine</span>
+        </div>
+        <div class="fact-row">
+          <span class="fact-label">Stores</span>
+          <span class="fact-val" style="color:var(--muted)">Approved Only</span>
         </div>
       </div>
 
-      <div class="navlinks" aria-label="primary">
-        <a href="#estimate">Get estimate</a>
-        <a href="#how">How it works</a>
-        <a href="#terms">Terms</a>
-        <a href="#contact">Contact</a>
-      </div>
-
-      <div class="navcta">
-        <div class="pill"><strong>50%</strong> advance • <strong>~25 days</strong> cycle</div>
-        <a class="btnTop" href="#estimate">Submit Product</a>
+      <div style="padding:0 18px 18px">
+        <details>
+          <summary>What we verify</summary>
+          <ul>
+            <li>Correct size / variant confirmed</li>
+            <li>Store is on our approved list</li>
+            <li>Availability at checkout</li>
+            <li>Final price vs estimate (tax/fees)</li>
+          </ul>
+        </details>
+        <details>
+          <summary>Best practice for customers</summary>
+          <ul>
+            <li>Use official store links only</li>
+            <li>Double-check your size chart</li>
+            <li>Include screenshots in Notes if needed</li>
+          </ul>
+        </details>
+        <details>
+          <summary>Delivery & ops</summary>
+          <p style="margin-top:10px">
+            Each batch cycle is <b style="color:var(--text)">~25 days</b>. Delays may occur due to cargo/customs/holidays. Shoe boxes may have minor dents from cargo handling — authenticity is always the priority.
+          </p>
+        </details>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="wrap">
+<!-- CATEGORIES -->
+<div class="section section-gap" id="categories">
+  <div class="section-head">
+    <h2>What We Ship</h2>
+    <div class="divider"></div>
+  </div>
 
-    <!-- HERO + SUMMARY -->
-    <section class="grid" style="margin-top:18px">
-      <div class="card">
-        <div class="pad">
-          <h1 class="heroTitle">
-            We buy authentic <span style="color:var(--acc1)">sports shoes</span> from US stores and deliver to Bangladesh in ~25 days.
-          </h1>
-          <p>
-            Send the product link and size — we’ll handle the purchase and batch delivery. Fast, simple, and authenticity-first.
-          </p>
-
-          <div class="heroBadges">
-            <span class="badge"><span class="dot"></span> Genuine products only</span>
-            <span class="badge"><span class="dot blue"></span> Instant estimate + 50% advance</span>
-            <span class="badge"><span class="dot warn"></span> Batch delivery ~25 days</span>
-          </div>
-
-          <!-- DO NOT CHANGE: storeBadges block (user-requested) -->
-          <div class="storeBadges" aria-label="approved stores">
-            <span class="store">Nike / SNKRS</span>
-            <span class="store">Adidas</span>
-            <span class="store">Puma</span>
-            <span class="store">Under Armour</span>
-            <span class="store">New Balance</span>
-            <span class="store">Foot Locker</span>
-            <span class="store">Pro Direct US</span>
-            <span class="store">Finish Line</span>
-            <span class="store">Amazon (Sold by Amazon)</span>
-            <span class="store">Other Brand</span>
-          </div>
-
-          <div class="heroCTA">
-            <a class="primaryBtn" href="#estimate">Get Estimate & Submit Order Request</a>
-            <a class="secondaryBtn" href="#terms">Read Terms</a>
-          </div>
-
-          <div id="how" style="margin-top:16px">
-            <h3 class="sectionTitle">How it works</h3>
-            <div class="kvs" style="border:1px solid rgba(255,255,255,.10); padding:12px; border-radius:14px; background:rgba(255,255,255,.03)">
-              <div><b>1) Submit</b></div><div>Link + size + price</div>
-              <div><b>2) Confirm</b></div><div>Pay 50% advance</div>
-              <div><b>3) We buy</b></div><div>From approved store</div>
-              <div><b>4) Deliver</b></div><div>~25-day cycle</div>
-            </div>
-            <p class="hint" style="margin-top:10px">
-              Tip: For limited editions, submit early — items can sell out fast.
-            </p>
-          </div>
-        </div>
+  <div class="cats-grid">
+    <div class="cat-card" onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'});selectCategory('shoes')">
+      <div class="cat-bg">
+        <div class="cat-glow"></div>
+        <span class="cat-emoji">👟</span>
       </div>
+      <div class="cat-badge">Available</div>
+      <div class="cat-info">
+        <div class="cat-name">Shoes</div>
+        <div class="cat-desc">Any pair from Nike, Adidas, NB, Puma, UA, Foot Locker & more</div>
+        <span class="cat-price">৳2,500 service fee / pair</span>
+      </div>
+    </div>
 
-      <!-- QUICK FACTS -->
-      <aside class="card">
-        <div class="pad">
-          <h3 class="sectionTitle">Quick facts</h3>
-          <div class="calc">
-            <div class="kvs">
-              <div>Service fee</div><div><b class="mono">৳2,500</b></div>
-              <div>Advance required</div><div><b class="mono">50%</b></div>
-              <div>Delivery cycle</div><div><b class="mono">~25 days</b></div>
-              <div>Category</div><div><b class="mono">Shoes only</b></div>
-              <div>Stores</div><div><b class="mono">Approved only</b></div>
-            </div>
+    <div class="cat-card" onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'});selectCategory('jersey')">
+      <div class="cat-bg">
+        <div class="cat-glow"></div>
+        <span class="cat-emoji">👕</span>
+      </div>
+      <div class="cat-badge">Available</div>
+      <div class="cat-info">
+        <div class="cat-name">Jersey / Bottom</div>
+        <div class="cat-desc">Authentic jerseys, shorts, pants — any team, any sport</div>
+        <span class="cat-price">৳1,200 service fee / item</span>
+      </div>
+    </div>
+
+    <div class="cat-card" onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'});selectCategory('equip')">
+      <div class="cat-bg">
+        <div class="cat-glow"></div>
+        <span class="cat-emoji">⚽</span>
+      </div>
+      <div class="cat-badge">Available</div>
+      <div class="cat-info">
+        <div class="cat-name">Sports Equipment</div>
+        <div class="cat-desc">Balls, gloves, guards, bags, accessories and more</div>
+        <span class="cat-price">Contact for pricing</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ORDER FORM -->
+<div class="section section-gap" id="order">
+  <div class="section-head">
+    <h2>Place Your Order</h2>
+    <div class="divider"></div>
+  </div>
+
+  <div class="form-grid">
+    <div class="form-card">
+      <div class="form-card-header">
+        <h3>📋 Order Request Form</h3>
+        <div class="tag-live"><div class="pulse"></div>WhatsApp Order</div>
+      </div>
+      <div class="form-card-body">
+        <p style="color:var(--muted);font-size:13.5px;line-height:1.6;margin-bottom:18px">
+          Fill in the details below — you'll get an instant estimate and can send directly via WhatsApp for fastest confirmation.
+        </p>
+
+        <!-- Category selector -->
+        <label>Category
+          <div class="cat-selector" style="display:grid;margin-top:6px">
+            <label class="cat-opt" style="margin-bottom:0">
+              <input type="radio" name="category" value="Shoes" id="catShoes" checked onchange="onCatChange()">
+              <span class="cat-opt-icon">👟</span>
+              <span class="cat-opt-name">Shoes</span>
+            </label>
+            <label class="cat-opt cat-jersey" style="margin-bottom:0">
+              <input type="radio" name="category" value="Jersey/Bottom" id="catJersey" onchange="onCatChange()">
+              <span class="cat-opt-icon">👕</span>
+              <span class="cat-opt-name">Jersey/Bottom</span>
+            </label>
+            <label class="cat-opt cat-equip" style="margin-bottom:0">
+              <input type="radio" name="category" value="Equipment" id="catEquip" onchange="onCatChange()">
+              <span class="cat-opt-icon">⚽</span>
+              <span class="cat-opt-name">Equipment</span>
+            </label>
           </div>
+        </label>
 
-          <details style="margin-top:12px">
-            <summary>What we verify before purchase</summary>
-            <ul>
-              <li>Correct size/variant</li>
-              <li>Store is approved</li>
-              <li>Availability at checkout (best effort)</li>
-              <li>Estimate vs final checkout total (tax/shipping may apply)</li>
-            </ul>
-          </details>
-
-          <details style="margin-top:10px">
-            <summary>Best practice for customers</summary>
-            <ul>
-              <li>Use official store links</li>
-              <li>Double-check size chart</li>
-              <li>Send clear notes if you have screenshots</li>
-            </ul>
-          </details>
+        <!-- Personal info -->
+        <div class="form-row">
+          <label>Full Name *
+            <span><input id="name" placeholder="Your full name" required></span>
+          </label>
+          <label>Phone / WhatsApp *
+            <span><input id="phone" placeholder="+8801XXXXXXXXX" required></span>
+          </label>
         </div>
-      </aside>
-    </section>
 
-    <!-- ESTIMATE + FORM -->
-    <section id="estimate" class="grid" style="margin-top:16px">
-      <div class="card">
-        <div class="pad">
-          <h3 class="sectionTitle">Get estimate & submit your product</h3>
-          <p class="hint" style="margin-top:-4px">
-            Fill the form — you’ll see an instant total estimate and the required advance.
-            Then submit via Netlify (stored in dashboard) or send via WhatsApp for faster confirmation.
-          </p>
-
-          <form
-            name="order"
-            method="POST"
-            data-netlify="true"
-            netlify-honeypot="bot-field"
-            action="/success.html"
-            id="orderForm"
-          >
-            <input type="hidden" name="form-name" value="order">
-            <input type="hidden" name="bot-field">
-
-            <!-- UPDATED: Added required Email field -->
-            <div class="row">
-              <label>Full Name
-                <input name="name" id="name" required placeholder="Your full name">
-              </label>
-              <label>Email (required)
-                <input type="email" name="email" id="email" required placeholder="you@example.com">
-              </label>
-            </div>
-
-            <div class="row">
-              <label>Phone / WhatsApp
-                <input name="phone" id="phone" required placeholder="+8801XXXXXXXXX">
-              </label>
-              <label>Shoe Size (US)
-                <input name="size" id="size" required placeholder="e.g., 9 / 10.5 / 11">
-              </label>
-            </div>
-
-            <!-- DO NOT CHANGE: Approved Store dropdown (user-requested) -->
-            <div class="row">
-              <label>Approved Store
-                <select name="store" id="store" required>
+        <!-- Shoes fields -->
+        <div class="field-shoes active" id="fieldShoes">
+          <div class="form-row">
+            <label>Store *
+              <span>
+                <select id="store">
                   <option value="Nike / SNKRS">Nike / SNKRS</option>
                   <option value="Adidas">Adidas</option>
                   <option value="Puma">Puma</option>
@@ -497,261 +869,429 @@
                   <option value="Amazon (Sold by Amazon)">Amazon (Sold by Amazon)</option>
                   <option value="Other Brand">Other Brand</option>
                 </select>
-              </label>
-
-              <label>Variant / Color (optional)
-                <input name="variant" id="variant" placeholder="e.g., Black/Volt, Special Edition">
-              </label>
-            </div>
-
-            <label>Product Link (URL)
-              <input name="product_link" id="productLink" required placeholder="Paste the product link here">
+              </span>
             </label>
-            <div class="hint">If you only have a screenshot, mention it in Notes.</div>
-
-            <div class="row">
-              <label>Product Price (USD)
-                <input type="number" name="usd_price" id="usdPrice" required min="1" step="0.01" placeholder="e.g., 120">
-              </label>
-              <label>USD → BDT Rate (editable)
-                <input type="number" name="fx_rate" id="fxRate" value="125" min="1" step="0.01">
-              </label>
-            </div>
-
-            <label>Notes (optional)
-              <textarea name="notes" id="notes" placeholder="Example: Screenshot available. Need this colorway. Any special instructions…"></textarea>
+            <label>Shoe Size (US) *
+              <span><input id="size" placeholder="e.g., 9 / 10.5 / 11" required></span>
             </label>
-
-            <div class="calc" aria-live="polite">
-              <div class="kvs">
-                <div>Estimated product cost</div><div><b id="productBDT" class="mono">৳0</b></div>
-                <div>Service fee (included)</div><div><b class="mono">৳2,500</b></div>
-                <div>Estimated total</div><div><b id="totalBDT" class="mono">৳0</b></div>
-                <div>Advance due now (50%)</div><div><b id="advanceBDT" class="mono">৳0</b></div>
-                <div>Remaining on delivery</div><div><b id="remainBDT" class="mono">৳0</b></div>
-              </div>
-              <div class="hint" style="margin-top:10px">
-                Final total may vary if store adds tax or checkout fees. We confirm before purchase whenever possible.
-              </div>
-
-              <div class="btnRow">
-                <button type="submit" class="btn" id="submitBtn">Submit Order</button>
-                <button type="button" class="btn secondary" id="waBtn" onclick="sendWhatsApp()" disabled>
-                  Send Order via WhatsApp
-                </button>
-              </div>
-
-              <div class="hint" id="waHint" style="margin-top:8px">
-                Fill required fields to enable WhatsApp send.
-              </div>
-            </div>
-          </form>
+          </div>
+          <label>Variant / Color (optional)
+            <span><input id="variant" placeholder="e.g., Black/Volt, Special Edition"></span>
+          </label>
         </div>
+
+        <!-- Jersey fields -->
+        <div class="field-jersey" id="fieldJersey">
+          <div class="form-row">
+            <label>Jersey Store *
+              <span>
+                <select id="jerseyStore">
+                  <option value="Nike / SNKRS">Nike</option>
+                  <option value="Adidas">Adidas</option>
+                  <option value="Puma">Puma</option>
+                  <option value="Under Armour">Under Armour</option>
+                  <option value="Fanatics">Fanatics</option>
+                  <option value="NBA Store">NBA Store</option>
+                  <option value="NFL Shop">NFL Shop</option>
+                  <option value="Amazon (Sold by Amazon)">Amazon (Sold by Amazon)</option>
+                  <option value="Other Brand">Other Brand</option>
+                </select>
+              </span>
+            </label>
+            <label>Size *
+              <span><input id="jerseySize" placeholder="e.g., S / M / L / XL / XXL"></span>
+            </label>
+          </div>
+          <label>Team / Player / Style (optional)
+            <span><input id="jerseyTeam" placeholder="e.g., Lakers #23, Man City Home 24/25"></span>
+          </label>
+        </div>
+
+        <!-- Equipment fields -->
+        <div class="field-equip" id="fieldEquip">
+          <label>Equipment Type *
+            <span><input id="equipType" placeholder="e.g., Football, Goalkeeper Gloves, Cricket Bat"></span>
+          </label>
+          <label>Brand / Store Preference
+            <span><input id="equipBrand" placeholder="e.g., Nike, Adidas, Wilson, any brand"></span>
+          </label>
+          <div style="background:rgba(255,107,0,.08);border:1px solid rgba(255,107,0,.2);border-radius:10px;padding:12px;font-size:13px;color:rgba(255,150,50,.9);line-height:1.5">
+            ⚠️ Service fee for equipment will be confirmed by us after review. Please submit and we'll contact you with the pricing.
+          </div>
+        </div>
+
+        <!-- Product link -->
+        <label>Product Link (URL) *
+          <span><input id="productLink" placeholder="Paste the product link from the store" required></span>
+        </label>
+
+        <!-- Pricing row -->
+        <div class="form-row">
+          <label>Product Price (USD) *
+            <span><input type="number" id="usdPrice" min="1" step="0.01" placeholder="e.g., 120"></span>
+          </label>
+          <label>USD → BDT Rate (editable)
+            <span><input type="number" id="fxRate" value="125" min="1" step="0.01"></span>
+          </label>
+        </div>
+
+        <!-- Notes -->
+        <label>Notes (optional)
+          <span><textarea id="notes" placeholder="Screenshot available? Special instructions? Any notes…"></textarea></span>
+        </label>
+
+        <!-- Calc box -->
+        <div class="calc-box">
+          <div class="calc-box-header">💰 Instant Estimate</div>
+          <div class="calc-rows">
+            <div class="ckvrow">
+              <span>Estimated product cost</span>
+              <b id="productBDT">৳0</b>
+            </div>
+            <div class="ckvrow">
+              <span>Service fee</span>
+              <b id="serviceFeeDisplay">৳2,500</b>
+            </div>
+            <div class="ckvrow total">
+              <span>Estimated total</span>
+              <b id="totalBDT">৳0</b>
+            </div>
+            <div class="ckvrow adv">
+              <span>Advance due now (50%)</span>
+              <b id="advanceBDT">৳0</b>
+            </div>
+            <div class="ckvrow">
+              <span>Remaining on delivery</span>
+              <b id="remainBDT">৳0</b>
+            </div>
+          </div>
+          <div class="form-note" style="padding:0 14px 12px">
+            Final total may vary due to store tax / checkout fees. We confirm before purchase whenever possible.
+          </div>
+        </div>
+
+        <!-- WhatsApp button -->
+        <button class="wa-btn" id="waBtn" onclick="sendWhatsApp()" disabled>
+          <span class="wa-icon">📲</span> Send Order via WhatsApp
+        </button>
+        <div class="wa-hint" id="waHint">Fill required fields to enable WhatsApp send.</div>
       </div>
+    </div>
 
-      <!-- CONTACT / OPS -->
-      <aside id="contact" class="card">
-        <div class="pad">
-          <h3 class="sectionTitle">Contact & Operations</h3>
-          <p>
-            After you submit, we’ll confirm availability and contact you using your email/WhatsApp for the 50% advance and confirming the order.
-          </p>
-
-          <details open>
-            <summary>Delivery cycle</summary>
-            <p style="margin-top:10px">
-              Each delivery cycle is approximately <b>25 days</b>. Delays may occur due to cargo/customs/holidays.
-            </p>
-          </details>
-
+    <!-- Side info -->
+    <div class="side-stack">
+      <div class="info-card">
+        <div class="info-card-header">📦 After You Submit</div>
+        <div class="info-card-body">
+          <p>After receiving your WhatsApp message, we'll verify availability and contact you to confirm the 50% advance payment.</p>
+          <p>Once payment is confirmed, we purchase from the approved store and batch-ship to Bangladesh.</p>
           <details>
-            <summary>Customer proof & authenticity</summary>
+            <summary>Delivery cycle</summary>
+            <p style="margin-top:10px">Each batch cycle is approximately <b style="color:var(--text)">25 days</b>. Delays may occur due to cargo, customs, or public holidays.</p>
+          </details>
+          <details>
+            <summary>Authenticity & proof</summary>
             <ul>
               <li>We purchase from approved stores only</li>
-              <li>Invoice/proof can be shared on request</li>
-              <li>No replicas — authenticity first</li>
-            </ul>
-          </details>
-
-          <details>
-            <summary>Next expansion</summary>
-            <p style="margin-top:10px">
-              Accessories and apparel can be added later with category-wise pricing (shin guards, socks, gloves, jerseys, jackets, bags).
-            </p>
-          </details>
-        </div>
-      </aside>
-    </section>
-
-    <!-- TERMS -->
-    <section id="terms" style="margin-top:16px">
-      <div class="card">
-        <div class="pad">
-          <h3 class="sectionTitle">Terms & Conditions (key points)</h3>
-          <p class="hint" style="margin-top:-4px">
-            Clear terms = smooth business. Customers agree to these by submitting and paying advance.
-          </p>
-
-          <details open>
-            <summary>Approved stores only</summary>
-            <ul>
-              <li>Nike/SNKRS, Adidas, Puma, Under Armour, New Balance, Foot Locker, Finish Line</li>
-              <li>Amazon items must be <b>Sold by Amazon</b> (no third-party sellers)</li>
-              <li>“Other Brand” must be a trusted/official store link (we’ll confirm)</li>
-            </ul>
-          </details>
-
-          <details>
-            <summary>Advance / cancellation</summary>
-            <ul>
-              <li><b>50% advance required</b> to confirm the order</li>
-              <li><b>No cancellation after purchase</b> (advance becomes non-refundable once we buy)</li>
-              <li>Limited/special items may require higher advance (60–70%) if needed to secure purchase</li>
-            </ul>
-          </details>
-
-          <details>
-            <summary>Size responsibility & item correctness</summary>
-            <ul>
-              <li>Customer is responsible for size/variant selection</li>
-              <li>If customer provided wrong info, customer bears the outcome</li>
-              <li>If we purchase the wrong item due to our mistake, we correct it</li>
-            </ul>
-          </details>
-
-          <details>
-            <summary>Delivery timeline & box condition</summary>
-            <ul>
-              <li>Delivery is estimated at <b>~25 days</b> from batch ship date</li>
-              <li>Delays can occur due to airline/cargo/customs/holidays</li>
-              <li>Shoe box may have dents/creases from cargo handling — authenticity is the priority</li>
-            </ul>
-          </details>
-
-          <details>
-            <summary>Currency & pricing</summary>
-            <ul>
-              <li>USD→BDT rate is locked at the time of payment for billing</li>
-              <li>Final total may vary slightly due to store tax/checkout fees</li>
+              <li>Invoice/proof shared on request</li>
+              <li>Zero replicas — authenticity always first</li>
             </ul>
           </details>
         </div>
       </div>
-    </section>
 
-    <footer>
-      © 2025 Sports Solutions Inc. • Only genuine. No replicas.<br>
-    </footer>
+      <div class="info-card">
+        <div class="info-card-header">💳 Payment Info</div>
+        <div class="info-card-body">
+          <p>Payment methods and bKash/bank details will be shared via WhatsApp after order confirmation.</p>
+          <p style="color:rgba(200,255,0,.8);font-size:13px">⚡ USD→BDT rate is locked at time of payment confirmation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TERMS -->
+<div class="terms-section" id="terms">
+  <div class="section-head" style="margin-bottom:16px">
+    <h2>Terms & Conditions</h2>
+    <div class="divider"></div>
   </div>
 
+  <div class="terms-grid">
+    <div class="terms-card">
+      <div class="terms-icon">🏪</div>
+      <div class="terms-title">Approved Stores Only</div>
+      <ul style="color:var(--muted);font-size:13px;margin-left:16px">
+        <li>Nike/SNKRS, Adidas, Puma, Under Armour, New Balance, Foot Locker, Finish Line</li>
+        <li>Amazon items must be <b style="color:var(--text)">Sold by Amazon</b> only</li>
+        <li>"Other Brand" must be an official/trusted store link — we'll confirm</li>
+      </ul>
+    </div>
+    <div class="terms-card">
+      <div class="terms-icon">💰</div>
+      <div class="terms-title">Advance & Cancellation</div>
+      <ul style="color:var(--muted);font-size:13px;margin-left:16px">
+        <li><b style="color:var(--text)">50% advance required</b> to confirm the order</li>
+        <li>No cancellation after purchase — advance is non-refundable once we buy</li>
+        <li>Limited items may require 60–70% advance to secure purchase</li>
+      </ul>
+    </div>
+    <div class="terms-card">
+      <div class="terms-icon">📏</div>
+      <div class="terms-title">Size & Item Responsibility</div>
+      <ul style="color:var(--muted);font-size:13px;margin-left:16px">
+        <li>Customer is responsible for correct size/variant selection</li>
+        <li>Wrong info provided by customer = customer bears the outcome</li>
+        <li>If we buy the wrong item due to our error, we correct it</li>
+      </ul>
+    </div>
+    <div class="terms-card">
+      <div class="terms-icon">🚚</div>
+      <div class="terms-title">Delivery & Pricing</div>
+      <ul style="color:var(--muted);font-size:13px;margin-left:16px">
+        <li>Delivery ~25 days from batch ship date; delays possible</li>
+        <li>Shoe boxes may have minor dents from cargo — authenticity is priority</li>
+        <li>USD→BDT rate locked at time of payment; final cost may vary slightly due to store tax/fees</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- SUCCESS OVERLAY -->
+<div id="successOverlay" style="display:none;position:fixed;inset:0;z-index:999;background:rgba(9,12,16,.96);backdrop-filter:blur(12px);overflow-y:auto;">
+  <div style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px">
+    <div style="width:min(600px,100%);background:var(--panel);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;animation:fadeUp .4s ease both">
+      <div style="height:4px;background:linear-gradient(90deg,var(--lime),var(--cyan),var(--orange),var(--pink))"></div>
+
+      <!-- header -->
+      <div style="display:flex;align-items:center;gap:12px;padding:18px 22px;border-bottom:1px solid var(--border);background:rgba(255,255,255,.02)">
+        <svg style="width:40px;height:40px;flex-shrink:0" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+          <rect width="64" height="64" rx="12" fill="#090c10"/>
+          <polygon points="32,4 52,16 52,30 32,44 12,30 12,16" fill="#c8ff00" opacity=".08"/>
+          <polygon points="32,6 50,17 50,29 32,42 14,29 14,17" fill="none" stroke="#c8ff00" stroke-width="1.2" opacity=".3"/>
+          <polygon points="32,8 48,18 40,22 32,16 24,22 16,18" fill="url(#ovlg)"/>
+          <polygon points="16,18 24,22 20,32 12,26" fill="#c8ff00" opacity=".55"/>
+          <polygon points="48,18 40,22 44,32 52,26" fill="#00d4ff" opacity=".55"/>
+          <polygon points="24,22 32,16 40,22 36,28 32,25 28,28" fill="#c8ff00"/>
+          <polygon points="28,28 32,25 36,28 32,56" fill="#00d4ff"/>
+          <polygon points="20,32 28,28 24,38 16,34" fill="#c8ff00" opacity=".4"/>
+          <polygon points="44,32 36,28 40,38 48,34" fill="#00d4ff" opacity=".4"/>
+          <defs><linearGradient id="ovlg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#c8ff00"/><stop offset="100%" stop-color="#00d4ff"/></linearGradient></defs>
+        </svg>
+        <div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:15px;letter-spacing:.8px">Sports Solutions Inc.</div>
+          <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--lime);margin-top:2px">Only genuine. No replicas.</div>
+        </div>
+      </div>
+
+      <!-- body -->
+      <div style="padding:28px 24px">
+        <div style="font-size:42px;margin-bottom:12px">✅</div>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:36px;letter-spacing:.5px;margin-bottom:10px;line-height:1">Order Sent via WhatsApp!</h2>
+        <p style="color:var(--muted);font-size:15px;line-height:1.65;margin-bottom:20px">
+          Your order request has been sent. We'll verify availability and contact you to confirm the 50% advance and finalise your purchase.
+        </p>
+
+        <!-- status pills -->
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px">
+          <span class="hbadge"><span class="dot dot-lime"></span> Order sent via WhatsApp</span>
+          <span class="hbadge"><span class="dot dot-cyan"></span> Next: 50% advance to confirm</span>
+        </div>
+
+        <!-- order summary box -->
+        <div id="successSummary" style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.09);border-radius:var(--r2);padding:14px 16px;margin-bottom:20px;font-size:13.5px;line-height:1.8;color:var(--muted)"></div>
+
+        <p style="color:rgba(200,255,0,.8);font-size:13px;margin-bottom:20px">
+          ⚡ If WhatsApp didn't open automatically, please go back and tap the button again.
+        </p>
+
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <button onclick="closeSuccess()" style="flex:1;padding:13px 18px;border-radius:12px;font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:800;letter-spacing:1px;text-transform:uppercase;background:linear-gradient(135deg,var(--lime),#a8e800);color:#090c10;border:none;cursor:pointer">
+            ← Back to Home
+          </button>
+          <a href="#terms" onclick="closeSuccess()" style="flex:1;display:inline-flex;align-items:center;justify-content:center;padding:13px 18px;border-radius:12px;font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:800;letter-spacing:1px;text-transform:uppercase;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.05)">
+            Read Terms
+          </a>
+        </div>
+
+        <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border);font-size:12px;color:rgba(138,147,184,.7);line-height:1.6">
+          Delivery is typically ~25 days per batch cycle. Delays may occur due to shipping, customs, or holidays. We purchase from approved stores only.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="left">
+    <b>Sports Solutions Inc.</b> &nbsp;·&nbsp; Only genuine. No replicas. &nbsp;·&nbsp; US → Bangladesh<br>
+    <span style="font-size:12px">© 2026 Sports Solutions Inc. All rights reserved.</span>
+  </div>
+  <div class="right">
+    This site is developed by <a href="https://rezoansultan.com" target="_blank" rel="noopener">Rezoan Sultan</a>
+  </div>
+</footer>
+
 <script>
-  const SERVICE_FEE = 2500;
-  const WA_NUMBER = "14438620065";
+const FEE = { shoes: 2500, jersey: 1200, equip: 0 };
+const WA_NUMBER = "14438620065";
 
-  const el = (id) => document.getElementById(id);
+const el = id => document.getElementById(id);
 
-  function formatBDT(n){
-    return "৳" + Math.round(n).toLocaleString();
+function getCurrentCategory(){
+  const checked = document.querySelector('input[name="category"]:checked');
+  return checked ? checked.value : 'Shoes';
+}
+
+function getCurrentFee(){
+  const cat = getCurrentCategory();
+  if(cat === 'Shoes') return 2500;
+  if(cat === 'Jersey/Bottom') return 1200;
+  return 0; // equip = ask
+}
+
+function formatBDT(n){ return "৳" + Math.round(n).toLocaleString('en-BD') }
+
+function calculate(){
+  const usd = Number(el("usdPrice").value || 0);
+  const fx  = Number(el("fxRate").value || 125);
+  const fee = getCurrentFee();
+  const product = usd * fx;
+  const total = product + fee;
+  const adv = total * 0.5;
+  const remain = total - adv;
+
+  el("productBDT").textContent = formatBDT(product);
+  el("serviceFeeDisplay").textContent = fee === 0 ? "TBD" : formatBDT(fee);
+  el("totalBDT").textContent = fee === 0 ? "TBD" : formatBDT(total);
+  el("advanceBDT").textContent = fee === 0 ? "TBD" : formatBDT(adv);
+  el("remainBDT").textContent = fee === 0 ? "TBD" : formatBDT(remain);
+
+  toggleWA();
+}
+
+function onCatChange(){
+  const cat = getCurrentCategory();
+  document.querySelectorAll('.field-shoes,.field-jersey,.field-equip').forEach(d=>d.classList.remove('active'));
+  if(cat === 'Shoes') el('fieldShoes').classList.add('active');
+  else if(cat === 'Jersey/Bottom') el('fieldJersey').classList.add('active');
+  else el('fieldEquip').classList.add('active');
+  calculate();
+}
+
+function selectCategory(type){
+  const map = {shoes:'catShoes', jersey:'catJersey', equip:'catEquip'};
+  const radio = el(map[type]);
+  if(radio){ radio.checked = true; onCatChange(); }
+}
+
+function requiredFilled(){
+  const cat = getCurrentCategory();
+  const base = [el("name"),el("phone"),el("productLink"),el("usdPrice"),el("fxRate")];
+  if(cat === 'Shoes') base.push(el("size"));
+  else if(cat === 'Jersey/Bottom') base.push(el("jerseySize"));
+  else base.push(el("equipType"));
+  return base.every(e => e && String(e.value||"").trim().length > 0);
+}
+
+function toggleWA(){
+  const ok = requiredFilled();
+  const btn = el("waBtn");
+  btn.disabled = !ok;
+  el("waHint").textContent = ok
+    ? "✅ WhatsApp message will include your full order summary."
+    : "Fill required fields to enable WhatsApp send.";
+}
+
+function sendWhatsApp(){
+  if(!requiredFilled()){
+    alert("Please fill all required fields before sending.");
+    return;
   }
+  const cat = getCurrentCategory();
+  const name = el("name").value.trim();
+  const phone = el("phone").value.trim();
+  const link = el("productLink").value.trim();
+  const usd = Number(el("usdPrice").value||0);
+  const fx = Number(el("fxRate").value||125);
+  const notes = el("notes").value.trim();
+  const fee = getCurrentFee();
+  const total = usd*fx + fee;
+  const adv = total * 0.5;
 
-  function getNumbers(){
-    const usd = Number(el("usdPrice").value || 0);
-    const fx  = Number(el("fxRate").value || 125);
-    const product = usd * fx;
-    const total = product + SERVICE_FEE;
-    const adv = total * 0.5;
-    const remain = total - adv;
-    return { usd, fx, product, total, adv, remain };
-  }
-
-  function calculate(){
-    const { product, total, adv, remain } = getNumbers();
-    el("productBDT").textContent = formatBDT(product);
-    el("totalBDT").textContent = formatBDT(total);
-    el("advanceBDT").textContent = formatBDT(adv);
-    el("remainBDT").textContent = formatBDT(remain);
-    toggleWA();
-  }
-
-  function requiredFilled(){
-    // UPDATED: added "email" as required
-    const ids = ["name","email","phone","size","productLink","usdPrice","fxRate"];
-    return ids.every(id => String(el(id).value || "").trim().length > 0);
-  }
-
-  function toggleWA(){
-    const ok = requiredFilled();
-    const waBtn = el("waBtn");
-    waBtn.disabled = !ok;
-    el("waHint").textContent = ok
-      ? "WhatsApp message will include your full order summary."
-      : "Fill required fields to enable WhatsApp send.";
-  }
-
-  function sendWhatsApp(){
-    if(!requiredFilled()){
-      alert("Please fill all required fields (name, email, phone, size, link, USD price, FX rate) before sending via WhatsApp.");
-      return;
-    }
-
-    const name  = el("name").value.trim();
-    const email = el("email").value.trim();
-    const phone = el("phone").value.trim();
+  let catDetails = "";
+  if(cat === 'Shoes'){
     const store = el("store").value;
-    const size  = el("size").value.trim();
-    const link  = el("productLink").value.trim();
-    const variant = (el("variant")?.value || "").trim();
-    const notes = el("notes").value.trim();
+    const size = el("size").value.trim();
+    const variant = el("variant").value.trim();
+    catDetails = `Store: ${store}\nShoe Size (US): ${size}${variant ? '\nVariant: '+variant : ''}`;
+  } else if(cat === 'Jersey/Bottom'){
+    const store = el("jerseyStore").value;
+    const size = el("jerseySize").value.trim();
+    const team = el("jerseyTeam").value.trim();
+    catDetails = `Store: ${store}\nSize: ${size}${team ? '\nTeam/Style: '+team : ''}`;
+  } else {
+    const type = el("equipType").value.trim();
+    const brand = el("equipBrand").value.trim();
+    catDetails = `Equipment Type: ${type}${brand ? '\nBrand/Store: '+brand : ''}`;
+  }
 
-    const { usd, fx, total, adv } = getNumbers();
+  const feeStr = fee > 0 ? `Service Fee: ৳${fee.toLocaleString()}\nEstimated Total: ৳${Math.round(total).toLocaleString()}\nAdvance Due (50%): ৳${Math.round(adv).toLocaleString()}` : "Service Fee: TBD — awaiting price confirmation";
 
-    if(!usd || usd <= 0){
-      alert("Please enter a valid USD price.");
-      return;
-    }
+  const message =
+`*Sports Solutions Inc. — Order Request*
 
-    const message =
-`Sports Solutions Inc. — Order Summary
-
+Category: ${cat}
 Name: ${name}
-Email: ${email}
 Phone: ${phone}
-Store: ${store}
-Size (US): ${size}
-Variant: ${variant || "—"}
-Product Link: ${link}
-USD Price: ${usd} (Rate: ${fx})
+${catDetails}
 
-Estimated Total: ৳${Math.round(total)}
-Advance Due (50%): ৳${Math.round(adv)}
+Product Link: ${link}
+USD Price: $${usd} (Rate: ${fx})
+
+${feeStr}
 
 Notes: ${notes || "—"}
 
 Delivery cycle: ~25 days`;
 
-    const url = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
-    window.open(url, "_blank");
-  }
+  const url = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
+  window.open(url, "_blank");
 
-  // Bind
-  ["input","change"].forEach(evt=>{
-    el("usdPrice").addEventListener(evt, calculate);
-    el("fxRate").addEventListener(evt, calculate);
+  // Show success overlay with summary
+  const fee = getCurrentFee();
+  const total = usd*fx + fee;
+  const adv = total * 0.5;
+  const summaryLines = [
+    `<b style="color:var(--text)">Category:</b> ${cat}`,
+    `<b style="color:var(--text)">Name:</b> ${name}`,
+    `<b style="color:var(--text)">Phone:</b> ${phone}`,
+    catDetails.split('\n').map(l => `<b style="color:var(--text)">${l.split(': ')[0]}:</b> ${l.split(': ').slice(1).join(': ')}`).join('<br>'),
+    `<b style="color:var(--text)">USD Price:</b> $${usd} @ ${fx} rate`,
+    fee > 0
+      ? `<b style="color:var(--text)">Estimated Total:</b> <span style="color:var(--lime)">৳${Math.round(total).toLocaleString()}</span> &nbsp;·&nbsp; <b style="color:var(--text)">Advance:</b> <span style="color:var(--cyan)">৳${Math.round(adv).toLocaleString()}</span>`
+      : `<b style="color:var(--text)">Service Fee:</b> <span style="color:var(--orange)">TBD — we'll confirm</span>`,
+  ];
+  el("successSummary").innerHTML = summaryLines.join('<br>');
+  el("successOverlay").style.display = "block";
+  document.body.style.overflow = "hidden";
+}
 
-    el("name").addEventListener(evt, toggleWA);
-    el("email").addEventListener(evt, toggleWA);   // UPDATED
-    el("phone").addEventListener(evt, toggleWA);
-    el("size").addEventListener(evt, toggleWA);
-    el("productLink").addEventListener(evt, toggleWA);
-    el("store").addEventListener(evt, toggleWA);
-    el("notes").addEventListener(evt, toggleWA);
+function closeSuccess(){
+  el("successOverlay").style.display = "none";
+  document.body.style.overflow = "";
+}
 
-    // Optional field, but include in toggles so WhatsApp updates smoothly
-    if (el("variant")) el("variant").addEventListener(evt, toggleWA);
-  });
+// Bind events
+["input","change"].forEach(evt => {
+  ["usdPrice","fxRate"].forEach(id => el(id)?.addEventListener(evt, calculate));
+  ["name","phone","productLink","size","jerseySize","equipType"].forEach(id => el(id)?.addEventListener(evt, toggleWA));
+});
 
-  // Init
-  calculate();
+// Init
+calculate();
 </script>
 </body>
 </html>
